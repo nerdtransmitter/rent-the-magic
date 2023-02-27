@@ -1,12 +1,31 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background:#DFE7FD;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.align-menu {
+  display: flex;
+  color: #637bbd;
+}
+.nav-link {
+  padding-right: 15px;
+}
+
+.nav-link:hover {
+  color: #889edd;
+}
+
+.logo {
+  display: flex;
+  font-size: 20px;
+}
+
+.logo h1 {
+  font-size: 30px;
+  font-family: 'Tilt Warp', cursive;
+  color: #637bbd;
 }
