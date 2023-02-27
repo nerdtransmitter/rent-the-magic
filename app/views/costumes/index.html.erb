@@ -1,1 +1,4 @@
-<h1>Costumes</h1>
+<h1>Costumes Index</h1>
+<% @costumes.each do |costume| %>
+  <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
+<% end %>
