@@ -8,7 +8,7 @@
 
 require "open-uri"
 
-user = User.first
+user = User.create
 file = URI.open("https://i.pinimg.com/564x/63/c9/e3/63c9e3898b534be37eee0dbb777204e1.jpg")
 costume = Costume.new(
   name: "Dragon",
