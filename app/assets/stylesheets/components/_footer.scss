@@ -1,18 +1,18 @@
 .footer {
-  background: rgb(152, 152, 182);
+  background: $light-blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  color: $dark-blue;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: $hover-dark-blue;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -21,6 +21,8 @@
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
-  color: #D23333;
+
+.h3 {
+  font-family: $p-font;
+  font-size: 15px;
 }
