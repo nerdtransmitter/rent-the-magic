@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :costumes
   has_many :bookings
+  has_many :requests, through: :costumes, source: :bookings
 end

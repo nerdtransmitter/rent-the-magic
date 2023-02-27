@@ -1,8 +1,8 @@
-<h1>Costumes Index</h1>
+<h1>Dashboard test</h1>
+<h2>My costumes</h2>
 <% @costumes.each do |costume| %>
   <div class="card">
     <%= costume.name %>
     <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
-    <%= link_to "Book this costume",  new_costume_booking_path(costume) %>
   </div>
 <% end %>
