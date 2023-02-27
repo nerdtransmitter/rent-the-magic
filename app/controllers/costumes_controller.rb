@@ -1,5 +1,5 @@
 class CostumesController < ApplicationController
-  before_action :set_costume, only: %i[show create edit destroy]
+  before_action :set_costume, only: %i[show edit destroy]
 
   def index
     @costumes = Costume.all
@@ -11,6 +11,7 @@ class CostumesController < ApplicationController
 
   def create
     @costume = Costume.new(costume_params)
+    @costume.user = current_user
     @costume.save
     redirect_to costume_path(@costume)
   end
