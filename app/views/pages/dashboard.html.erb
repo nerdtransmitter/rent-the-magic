@@ -1,4 +1,8 @@
 <h1>Dashboard test</h1>
+<% @bookings.each do |booking| %>
+  <%= booking.costume.name %>
+  <%= booking.start_date %>
+<% end %>
 <h2>My costumes</h2>
 <% @costumes.each do |costume| %>
   <div class="card">
@@ -6,3 +10,5 @@
     <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
   </div>
 <% end %>
+
+<h2>My bookings</h2>
