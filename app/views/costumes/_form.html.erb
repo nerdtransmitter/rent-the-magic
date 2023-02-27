@@ -1,0 +1,8 @@
+<%= simple_form_for(costume) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category, placeholder: 'unicorn, wizard, hobbit' %>
+  <%= f.input :size, placeholder: 'XS, S, M, L, XL, XXL' %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
