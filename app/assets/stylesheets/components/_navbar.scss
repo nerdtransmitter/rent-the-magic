@@ -1,3 +1,4 @@
+
 .navbar-lewagon {
   justify-content: space-between;
   background:#DFE7FD;
@@ -9,14 +10,15 @@
 
 .align-menu {
   display: flex;
-  color: #637bbd;
+  color: $dark-blue;
+  font-family: $p-font;
 }
 .nav-link {
   padding-right: 15px;
 }
 
 .nav-link:hover {
-  color: #889edd;
+  color: $hover-dark-blue;
 }
 
 .logo {
@@ -26,6 +28,6 @@
 
 .logo h1 {
   font-size: 30px;
-  font-family: 'Tilt Warp', cursive;
-  color: #637bbd;
+  font-family: $title-font;
+  color: $dark-blue;
 }
