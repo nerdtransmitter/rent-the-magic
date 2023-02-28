@@ -14,6 +14,11 @@
   color: #4D04C4;
   font-family: $p-font;
 }
+
+.nav-link:active {
+  color: #a172ed;
+}
+
 .nav-link {
   padding: 20px;
   padding-right: 25px;
