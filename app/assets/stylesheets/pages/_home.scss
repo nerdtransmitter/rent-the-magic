@@ -9,6 +9,15 @@
   }
 
 
-  .conteneur-principal {
-    padding: 100px;
-  }
+.conteneur-principal {
+  padding: 50px;
+}
+
+.fond-blanc {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: white;
+}
+
+.left-block-homepage {
+  align-items: center;
+}
