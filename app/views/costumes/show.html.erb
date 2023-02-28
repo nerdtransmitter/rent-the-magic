@@ -1,7 +1,6 @@
-<div class="container mt-5">
-  <div class="card">
-    <div class="row no-gutters">
-      <div class="col-md-4">
+<div class="container mt-5 ">
+  <div class="row no-gutters">
+      <div class="card col-5 me-5">
         <h3 class="card-title"><%= @costume.name %></h3>
         <div class="card-img-container d-flex justify-content-center align-items-center w-100">
           <%= cl_image_tag @costume.photo.key, height: 300, width: 200, crop: :fill %>
@@ -9,17 +8,17 @@
           <p class="card-price"><%= number_to_currency(@costume.price) %></p>
           <p>
       </div>
-    </div>
-  </div>
-</div>
-   <%= link_to "Back to costumes", costumes_path, class: "btn btn-primary btn-sm" %>
-
-<div class="container mt-5 s-3 sticky-top col-md-5">
-  <div class="card">  
-      <div class="">
-        <div class="card-body">
-            <%= render "bookings/form", booking: Booking.new, costume: @costume %>
+      
+        <div class="card mt-5 mb-1 col-5 ">  
+            <div class="">
+              <div class="card-body">
+                  <%= render "bookings/form", booking: Booking.new, costume: @costume %>
+              </div>
+            </div>
         </div>
-      </div>
   </div>
 </div>
+   <%= link_to "Back to costumes", costumes_path, class: "btn-ghost mt-2" %>
+
+
+
