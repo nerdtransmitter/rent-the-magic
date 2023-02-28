@@ -14,6 +14,7 @@ class CostumesController < ApplicationController
     authorize @costume
   end
 
+
   def create
     @costume = Costume.new(costume_params)
     @costume.user = current_user

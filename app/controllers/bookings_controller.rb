@@ -45,6 +45,11 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def destroy
+    @booking.destroy
+    redirect_to list_path(@booking.list), status: :see_other
+  end
+
   private
 
   def booking_params
