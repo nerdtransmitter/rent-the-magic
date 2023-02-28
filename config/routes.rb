@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :costumes do
-    resources :bookings
+    resources :bookings do
+    end
+  end
+  resources :bookings, only: [] do
+    member do
+      post :approve
+    end
   end
 end
