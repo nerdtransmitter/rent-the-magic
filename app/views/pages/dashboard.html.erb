@@ -1,18 +1,17 @@
-<%# <div class="container">
-  <div class="row"> %>
+<div class="container">
+  <div class="row">
 
 
-    <div class="costumes-container col-8 rounded">
+    <div class="costumes-container col-7 rounded">
       <h2 class="m-2">My costumes</h2>
-      <br>
-      <div class="cards">
+      <div class="cards-costumes">
         <% @costumes.each do |costume| %>
-          <div class="card p-2 m-2 shadow-lg">
+          <div class="card p-2 mb-2 shadow-lg">
             <div class="d-flex justify-content-between">
               <h3><%= costume.name %></h3>
               <p class="card-price"><%= number_to_currency(costume.price) %></p>
             </div>
-            <div class="card-img-container d-flex justify-content-center align-items-center w-100">
+            <div class="d-flex justify-content-center align-items-center w-100">
               <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
             </div>
             <%# <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
@@ -33,18 +32,24 @@
       </div>
     </div>
 
-    <div class="bookings container bg-white col-4 m-1 text-end">
-      <h2>My bookings</h2>
+    <div class="bookings-container col-4">
+      <h3 class="m-2">my rentals</h3>
 
       <div class="bookings-cards">
         <% @bookings.each do |booking| %>
-          <div class="card">
-            <%= link_to booking.costume.name, costume_path(booking.costume) %>
-            <div class="text-start">
-              <p><strong>From: </strong><%= booking.start_date %></p>
-              <p><strong>To: </strong><%= booking.end_date %></p>
-            </div>
+          <div class="collapsible-container mb-2">
+            <button type="button" class="collapsible"><%= booking.costume.name %></button>
+              <div class="content">
+                <div class="d-flex">
+                  <div>
+                    <p><strong>From: </strong><%= booking.start_date %></p>
+                    <p><strong>To: </strong><%= booking.end_date %></p>
+                  </div>
+                    <%= link_to "details", costume_path(booking.costume), class: "btn btn-ghost", style: "position: absolute; top: 5px; right: 5px;" %>
+                </div>
+              </div>
           </div>
+
         <% end %>
         <h4>My Requests</h4>
         <% @requests.each do |request| %>
@@ -60,5 +65,11 @@
 
     </div>
 
-  <%# </div>
+  </div>
+</div>
+<%#
+<div class="card-booking p-2 m-1">
+  <div class="text-start">
+
+  </div>
 </div> %>
