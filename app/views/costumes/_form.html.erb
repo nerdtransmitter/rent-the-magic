@@ -7,11 +7,11 @@
         <%= f.input :size, as: :select, collection: ["XS", "S", "M", "L", "XL", "XXL"] %>
         <%= f.input :price %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit class: "bouton-fairy"%>
+        <%= f.submit class: "btn-flat"%>
       <% end %>
       </div>
       <div class="col-4 mt-2 mb-2">
-      <img src="http://yogi.y.o.pic.centerblog.net/7b3abf8a.jpg" alt="item" class="fairy">
+      <%= image_tag "illu2.PNG", class: "fairy"%>
       </div>
     </div>
 </div>
