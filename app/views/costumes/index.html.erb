@@ -7,7 +7,7 @@
       <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
     </div>
     <p class="card-price"><%= number_to_currency(costume.price) %></p>
-    <%= link_to "Rent this costume!", costume_path(costume), class: "rent-link" %>
+    <%= link_to "Rent this costume!", costume_path(costume), class: "btn btn-ghost mb-3 fw-bolder"%>
   </div>
   <% end %>
 </div>
