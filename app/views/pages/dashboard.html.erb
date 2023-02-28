@@ -1,27 +1,36 @@
-<div class="container">
-  <h1 class="text-center">My dashboard</h1>
-  <div class="row">
-    <h2>My costumes</h2>
+<%# <div class="container">
+  <div class="row"> %>
 
-    <div class="costumes-container col-7 bg-white">
-      <% @costumes.each do |costume| %>
-        <div class="card p-2 m-2">
-          <h3><%= costume.name %></h3>
-          <p><%= costume.user.email %></p>
-          <div class="card-img-container d-flex justify-content-center align-items-center w-100">
-            <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
+
+    <div class="costumes-container col-8 rounded">
+      <h2 class="m-2">My costumes</h2>
+      <br>
+      <div class="cards">
+        <% @costumes.each do |costume| %>
+          <div class="card p-2 m-2 shadow-lg">
+            <div class="d-flex justify-content-between">
+              <h3><%= costume.name %></h3>
+              <p class="card-price"><%= number_to_currency(costume.price) %></p>
+            </div>
+            <div class="card-img-container d-flex justify-content-center align-items-center w-100">
+              <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
+            </div>
+            <%# <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
+            <div class="d-flex justify-content-end">
+              <% if policy(costume).edit? %>
+                <%= link_to "Edit", edit_costume_path(costume), class: "btn btn-ghost" %>
+              <% end %>
+              <!-- [...] -->
+              <%= button_to costume,
+                method: :delete,
+                data: { turbo_confirm: "Are you sure?" },
+                class: "btn btn-ghost" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end if policy(costume).destroy? %>
+            </div>
           </div>
-          <%# <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
-          <p class="card-price"><%= number_to_currency(costume.price) %></p>
-          <div>
-            <% if policy(costume).edit? %>
-              <%= link_to "Edit this costume", edit_costume_path(costume)%> |
-            <% end %>
-            <!-- [...] -->
-            <%= button_to "Destroy this costume", costume, method: :delete if policy(costume).destroy?%>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
 
     <div class="bookings container bg-white col-4 m-1 text-end">
@@ -51,5 +60,5 @@
 
     </div>
 
-  </div>
-</div>
+  <%# </div>
+</div> %>
