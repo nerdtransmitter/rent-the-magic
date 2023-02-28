@@ -14,13 +14,6 @@
   height: 100%;
 }
 
-
-.card-img-top {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
 .card h3 {
   font-size: 18px;
   font-weight: bold;
@@ -52,7 +45,17 @@
   cursor: pointer;
 }
 
+.card-booking {
+  text-decoration: none;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: white;
+}
 
+.cards-costumes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 
 // Smallest device
