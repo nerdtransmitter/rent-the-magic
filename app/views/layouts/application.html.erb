@@ -18,11 +18,13 @@
     <div class="conteneur-principal">
       <div class="fond-blanc" >
         <%= render "shared/navbar" %>
-        <%= yield %>
-        <%= render "shared/footer" %>
+        <div style="min-height:80vh;">
+          <%= yield %>
+        </div>
       </div>
     </div>
   </div>
+    <%= render "shared/footer" %>
     <%= render "shared/flashes" %>
   </body>
 </html>
