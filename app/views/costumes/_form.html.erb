@@ -1,8 +1,17 @@
-<%= simple_form_for(costume) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category, placeholder: 'unicorn, wizard, hobbit' %>
-  <%= f.input :size, placeholder: 'XS, S, M, L, XL, XXL' %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class = "container form-container mt-40">
+  <div class="row">
+    <div class="col-8">
+      <%= simple_form_for(costume) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :category, as: :select, collection: ["unicorn", "wizard", "hobbit", "dragon", "elf","dwarf", "princess", "other"]%>
+        <%= f.input :size, as: :select, collection: ["XS", "S", "M", "L", "XL", "XXL"] %>
+        <%= f.input :price %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit class: "bouton-fairy"%>
+      <% end %>
+      </div>
+      <div class="col-4 mt-2 mb-2">
+      <img src="http://yogi.y.o.pic.centerblog.net/7b3abf8a.jpg" alt="item" class="fairy">
+      </div>
+    </div>
+</div>
