@@ -8,7 +8,6 @@
   padding: 40px 150px;
   }
 
-
 .conteneur-principal {
   padding: 50px;
 }
@@ -20,4 +19,19 @@
 
 .left-block-homepage {
   align-items: center;
+}
+
+.logo h1{
+  font-family: 'Climate Crisis', cursive;
+  font-size: 50px;
+  background-image: -webkit-linear-gradient(left, #0E0021, #1C0647, #2F0A69, #732794, #893781, #9D485B, #CD4660, #A6543F, #AE5D1B);
+	-webkit-animation: animatedBackground_a 5s linear infinite alternate;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: #0000;
+	background-clip: text;
+}
+
+@keyframes animatedBackground_a {
+	0% { background-position: 0 0 }
+	100% { background-position: -500px 0 }
 }
