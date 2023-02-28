@@ -7,10 +7,10 @@
       <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
     </div>
     <p class="card-price"><%= number_to_currency(costume.price) %></p>
-    <%# <%= link_to costume_path(costume), method: :delete, data: { confirm: "Are you sure you want to delete #{costume.name}?" }, class: "delete-link " do %>
-        <%# <i class="fas fa-trash"></i> %> 
-    <%# <% end %>     
-    <%= link_to "Rent this costume!", new_costume_booking_path(costume), class: "rent-link" %>
+    <%= link_to costume_path(costume), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{costume.name}?" }, class: "delete-link " do %>
+      <i class="fas fa-trash"></i>
+    <% end %>     
+    <%= link_to "Rent this costume!", costume_path(costume), class: "rent-link" %>
   </div>
   <% end %>
 </div>

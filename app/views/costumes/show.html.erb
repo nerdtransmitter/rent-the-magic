@@ -1,1 +1,22 @@
-<%= cl_image_tag @costume.photo.key, height: 300, width: 200, crop: :fill %>
+<div class="card">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <div class="card-img-container d-flex justify-content-center align-items-center w-100">
+        <%= cl_image_tag @costume.photo.key, height: 300, width: 200, crop: :fill %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title"><%= @costume.name %></h3>
+        <p class="card-price"><%= number_to_currency(@costume.price) %></p>
+        <% if user_signed_in? %>
+          <%= render "bookings/form", booking: @booking, costume: @costume %>
+        <% else %>
+          <%= link_to "Sign in to rent this costume", new_user_session_path %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Back to all costumes", costumes_path, class: "back-link" %>
+</div>
+
