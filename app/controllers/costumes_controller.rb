@@ -1,23 +1,47 @@
 class CostumesController < ApplicationController
-  before_action :set_costume, only: %i[show edit destroy]
+  before_action :set_costume, only: %i[show edit update destroy]
 
   def index
-    @costumes = Costume.all
+    @costumes = policy_scope(Costume)
+  end
+
+  def show
+    authorize @costume
   end
 
   def new
     @costume = Costume.new
+    authorize @costume
   end
 
   def create
     @costume = Costume.new(costume_params)
     @costume.user = current_user
-    @costume.save
-    redirect_to costume_path(@costume)
+    authorize @costume
+    if @costume.save
+      redirect_to costume_path(@costume)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    authorize @costume
+  end
+
+  def update
+    @costume.update(costume_params)
+    authorize @costume
+    if @costume.save
+      redirect_to costume_path(@costume)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @costume.destroy
+    authorize @costume
     redirect_to costumes_path, status: :see_other
   end
 
