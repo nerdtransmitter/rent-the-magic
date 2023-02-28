@@ -3,9 +3,8 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
 }
-
 .card {
-  background-color: #f9f9f9;
+  background-color: #F9F9F9;
   border: 1px solid #eaeaea;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -13,8 +12,6 @@
   flex-direction: column;
   height: 100%;
 }
-
-
 .card-img-top {
   object-fit: cover;
   height: 100%;
