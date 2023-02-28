@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[edit update destroy]
+  before_action :set_booking, only: %i[edit update destroy approve]
 
   # def index
   #   @bookings = policy_scope(Booking)
@@ -45,9 +45,15 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def destroy
-    @booking.destroy
-    redirect_to list_path(@booking.list), status: :see_other
+  def approve
+    @booking.update(state: "approved")
+    authorize @booking
+    if @booking.state == "approved"
+      flash[:success] = "Booking successfully approved"
+    else
+      flash[:error] = "Booking not approved"
+    end
+    redirect_to dashboard_path
   end
 
   private

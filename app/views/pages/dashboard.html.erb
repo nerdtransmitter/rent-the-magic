@@ -37,11 +37,14 @@
             </div>
           </div>
         <% end %>
+        <h4>My Requests</h4>
         <% @requests.each do |request| %>
           <% request.each do |r| %>
             <%= r.status %>
             <p><strong>From: </strong><%= r.start_date %></p>
             <p><strong>To: </strong><%= r.end_date %></p>
+            <%= button_to 'Approve', approve_booking_path(r), class: "button-xs success" %>
+            state: <%= r.state  %>
           <% end %>
         <% end %>
       </div>

@@ -19,6 +19,10 @@ class BookingPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def approve?
+    record.user == user
+  end
+
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
