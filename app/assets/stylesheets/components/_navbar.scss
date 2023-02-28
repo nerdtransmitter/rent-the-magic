@@ -1,7 +1,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background:#DFE7FD;
+  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,24 +10,25 @@
 
 .align-menu {
   display: flex;
+  justify-content: flex-start;
   color: $dark-blue;
   font-family: $p-font;
 }
 .nav-link {
-  padding-right: 15px;
+  padding: 20px;
+  padding-right: 25px;
 }
+
 
 .nav-link:hover {
   color: $hover-dark-blue;
 }
 
-.logo {
+.container-navbar {
+  justify-content: space-between;
+  align-items: center;
   display: flex;
-  font-size: 20px;
-}
-
-.logo h1 {
-  font-size: 30px;
-  font-family: $title-font;
-  color: $dark-blue;
+  height: 100%;
+  position: relative;
+  width: 100%;
 }
