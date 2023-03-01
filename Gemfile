@@ -5,7 +5,11 @@ ruby "3.1.2"
 
 gem "devise"
 
-gem "cloudinary"
+
+# gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+# gem "bootstrap_calendar_rails"
+
+# gem "cloudinary"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 

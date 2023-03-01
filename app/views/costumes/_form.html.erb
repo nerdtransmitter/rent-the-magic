@@ -1,5 +1,5 @@
 <div class = "container form-container ">
-  <div class="row mt-5">
+  <div class="row my-5">
     <div class="col-8">
       <%= simple_form_for(costume) do |f| %>
         <%= f.input :name %>
@@ -7,7 +7,7 @@
         <%= f.input :size, as: :select, collection: ["XS", "S", "M", "L", "XL", "XXL"] %>
         <%= f.input :price %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit class: "btn-flat"%>
+        <%= f.submit class: "btn-flat border border-light mt-3"%>
       <% end %>
       </div>
       <div class="col-4 mt-2 mb-2">
