@@ -3,7 +3,7 @@
     <div class="col-8">
       <%= simple_form_for(costume) do |f| %>
         <%= f.input :name %>
-        <%= f.input :category, as: :select, collection: ["unicorn", "wizard", "hobbit", "dragon", "elf","dwarf", "princess", "other"]%>
+        <%= f.input :category, as: :select, collection: ["unicorn", "wizard", "hobbit", "dragon", "elf","dwarf", "princess", "character", "other"]%>
         <%= f.input :size, as: :select, collection: ["XS", "S", "M", "L", "XL", "XXL"] %>
         <%= f.input :description %>
         <%= f.input :price %>
