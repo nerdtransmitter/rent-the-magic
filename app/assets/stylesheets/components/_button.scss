@@ -37,3 +37,22 @@
   margin-top: 100px;
   margin-left: 50px;
 }
+
+
+.btn-log {
+  color: #416242;
+  background-color: #FDECEF;
+  border: 1px solid #4A4A4A;
+  font-style: italic;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 20px 10px 0 10px;
+
+}
+
+.btn-log:hover {
+  opacity: 1;
+}
