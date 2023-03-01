@@ -7,7 +7,8 @@ class CostumesController < ApplicationController
       {
         lat: costume.latitude,
         lng: costume.longitude,
-        info_html: render_to_string(partial: "info", locals: {costume: costume})
+        info_html: render_to_string(partial: "info", locals: {costume: costume}),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end

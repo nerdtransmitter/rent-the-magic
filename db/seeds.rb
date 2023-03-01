@@ -19,7 +19,7 @@ costume = Costume.new(
   category: "Fantastic beasts",
   size: "L",
   price: 19.99,
-  location: "Paris 18"
+  location: "25 rue Doudeauville, 75018 PARIS"
 )
 costume.photo.attach(io: file, filename: "dragoness.png", content_type: "image/png")
 costume.user = user
@@ -31,7 +31,7 @@ costume2 = Costume.new(
   category: "Character",
   size: "S",
   price: 55.99,
-  location: "Paris 19"
+  location: "16 avenue de Laumière, 75019 PARIS"
 )
 costume2.photo.attach(io: file2, filename: "dani.png", content_type: "image/png")
 costume2.user = user
@@ -43,7 +43,7 @@ costume3 = Costume.new(
   category: "Character",
   size: "XL",
   price: 47.99,
-  location: "Corbeil"
+  location: "5 rue calmels prolongée, 75018 PARIS"
 )
 costume3.photo.attach(io: file3, filename: "jon.png", content_type: "image/png")
 costume3.user = user
@@ -55,7 +55,7 @@ costume4 = Costume.new(
   category: "Fantastic beasts",
   size: "XS",
   price: 74.99,
-  location: "Montreuil"
+  location: "13 rue pigalle, 75010 PARIS"
 )
 costume4.photo.attach(io: file4, filename: "licorne.png", content_type: "image/png")
 costume4.user = user
