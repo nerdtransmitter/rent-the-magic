@@ -1,4 +1,7 @@
+   <%= link_to "Back to costumes", costumes_path, class: "btn-flat btn-show text-decoration-none float-start " %>
+
 <div class="container mt-5 ">
+
   <div class="row no-gutters">
       <div class="card col-5 me-5">
         <h3 class="card-title"><%= @costume.name %></h3>
@@ -7,6 +10,7 @@
         </div>
           <p class="card-price"><%= number_to_currency(@costume.price) %></p>
           <p>
+          <%= @costume.description %>
       </div>
 
         <div class="card mt-5 mb-1 col-5 ">
@@ -27,6 +31,5 @@
 </div>
 
 <div class="p-3 d-flex flex-column">
-   <%= link_to "Back to costumes", costumes_path, class: "btn-flat btn-show text-decoration-none float-start " %>
   <%= image_tag "illu1.PNG", class: "fairy align-self-end" %>
 </div>

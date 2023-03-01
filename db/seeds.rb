@@ -60,3 +60,15 @@ costume4 = Costume.new(
 costume4.photo.attach(io: file4, filename: "licorne.png", content_type: "image/png")
 costume4.user = user
 costume4.save
+
+file5 = URI.open("https://i.pinimg.com/564x/10/55/df/1055df347fe6c3b32c8ad9cfcda7b28d.jpg")
+costume4 = Costume.new(
+  name: "Unicorn",
+  category: "Fantastic beasts",
+  size: "XS",
+  price: 74.99
+)
+costume4.photo.attach(io: file4, filename: "licorne.png", content_type: "image/png")
+costume4.user = user
+costume4.save
+
