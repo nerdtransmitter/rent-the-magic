@@ -8,8 +8,8 @@
           <p class="card-price"><%= number_to_currency(@costume.price) %></p>
           <p>
       </div>
-      
-        <div class="card mt-5 mb-1 col-5 ">  
+
+        <div class="card mt-5 mb-1 col-5 ">
             <div class="">
               <div class="card-body">
                   <%= render "bookings/form", booking: Booking.new, costume: @costume %>
@@ -17,14 +17,16 @@
             </div>
         </div>
   </div>
-  
+
+  <div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
+  data-controller="map"
+  data-map-markers-value="<%= @marker.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
 </div>
-  
+
 <div class="p-3 d-flex flex-column">
    <%= link_to "Back to costumes", costumes_path, class: "btn-flat btn-show text-decoration-none float-start " %>
   <%= image_tag "illu1.PNG", class: "fairy align-self-end" %>
 </div>
-
-
-
