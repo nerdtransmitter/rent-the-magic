@@ -74,3 +74,4 @@ costume5 = Costume.new(
 costume5.photo.attach(io: file5, filename: "licorne.png", content_type: "image/png")
 costume5.user = user
 costume5.save
+
