@@ -1,5 +1,14 @@
-<%= simple_form_for([costume, booking]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>
+<div class = "container form-container ">
+  <div class="row mt-5">
+    <div class="col-8">
+      <%= simple_form_for([costume, booking]) do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit class: "btn-flat"%>
+      <% end %>
+    </div>
+    <div class="col-4 mt-2 mb-2">
+      <%= image_tag "illu2.PNG", class: "fairy"%>
+    </div>
+  </div>
+</div>
