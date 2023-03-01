@@ -6,6 +6,7 @@
         <%= f.input :category, as: :select, collection: ["unicorn", "wizard", "hobbit", "dragon", "elf","dwarf", "princess", "other"]%>
         <%= f.input :size, as: :select, collection: ["XS", "S", "M", "L", "XL", "XXL"] %>
         <%= f.input :price %>
+        <%= f.input :location %>
         <%= f.input :photo, as: :file %>
         <%= f.submit class: "btn-flat border border-light mt-3"%>
       <% end %>

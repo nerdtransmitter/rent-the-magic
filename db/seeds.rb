@@ -8,24 +8,30 @@
 
 require "open-uri"
 
-user = User.find_by(email: "Olga@gmail.com")
+Costume.destroy_all
+User.destroy_all
+u = User.create!(email: "aurore@test.com", password: "auroretest", password_confirmation: "auroretest")
+
+user = User.all.sample
 file = URI.open("https://i.pinimg.com/564x/63/c9/e3/63c9e3898b534be37eee0dbb777204e1.jpg")
 costume = Costume.new(
   name: "Dragon",
   category: "Fantastic beasts",
   size: "L",
-  price: 19.99
+  price: 19.99,
+  location: "Paris 18"
 )
 costume.photo.attach(io: file, filename: "dragoness.png", content_type: "image/png")
 costume.user = user
-costume.save
+costume.save!
 
 file2 = URI.open("https://i.pinimg.com/564x/9b/a7/b5/9ba7b5d376047fa973740704e0768f20.jpg")
 costume2 = Costume.new(
   name: "Mother of Dragons",
   category: "Character",
   size: "S",
-  price: 55.99
+  price: 55.99,
+  location: "Paris 19"
 )
 costume2.photo.attach(io: file2, filename: "dani.png", content_type: "image/png")
 costume2.user = user
@@ -36,7 +42,8 @@ costume3 = Costume.new(
   name: "Jon Snow",
   category: "Character",
   size: "XL",
-  price: 47.99
+  price: 47.99,
+  location: "Corbeil"
 )
 costume3.photo.attach(io: file3, filename: "jon.png", content_type: "image/png")
 costume3.user = user
@@ -47,7 +54,8 @@ costume4 = Costume.new(
   name: "Unicorn",
   category: "Fantastic beasts",
   size: "XS",
-  price: 74.99
+  price: 74.99,
+  location: "Montreuil"
 )
 costume4.photo.attach(io: file4, filename: "licorne.png", content_type: "image/png")
 costume4.user = user
