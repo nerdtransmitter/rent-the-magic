@@ -13,6 +13,10 @@
 .costumes-container {
   background-color: transparent;
   margin-left: 145px;
+  h4 {
+    font-family: 'Poppins';
+    font-size: 16px;
+  }
 }
 
 h1, h2, h3 {
@@ -20,6 +24,8 @@ h1, h2, h3 {
   letter-spacing: 2px;
   font-weight: bolder;
 }
+
+
 
 .glow {
   font-size: 60px;
