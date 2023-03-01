@@ -2,20 +2,22 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon w-100 d-flex justify-content-between">
     <div class="container-fluid d-flex justify-content-between">
       <div class="collapse navbar-collapse d-flex justify-content-between w-100 align-menu" id="navbarSupportedContent">
-            <% if user_signed_in? %>
-              <div class="d-flex">
-                  <%= link_to "Rent The Magic", root_path, class: "nav-link" %>
-                  <%= link_to "Voir les costumes", costumes_path, class: "nav-link" %>
-                  <%= link_to "Ajouter un costume", new_costume_path, class: "nav-link" %>
-                  <%= link_to "Mon dashboard", dashboard_path, class: "nav-link" %>
-              </div>
-                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link btn-logout " %>
-            </div>
-            <% else %>
+          <% if user_signed_in? %>
+            <div class="d-flex">
                 <%= link_to "Rent The Magic", root_path, class: "nav-link" %>
                 <%= link_to "Voir les costumes", costumes_path, class: "nav-link" %>
-                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            <% end %> 
+                <%= link_to "Ajouter un costume", new_costume_path, class: "nav-link" %>
+                <%= link_to "Mon dashboard", dashboard_path, class: "nav-link" %>
+            </div>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link btn-logout " %>
+          </div>
+          <% else %>
+            <div class="d-flex">
+              <%= link_to "Rent The Magic", root_path, class: "nav-link" %>
+              <%= link_to "Voir les costumes", costumes_path, class: "nav-link" %>
+            </div>
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <% end %> 
       </div>
     </div>
   </div>
