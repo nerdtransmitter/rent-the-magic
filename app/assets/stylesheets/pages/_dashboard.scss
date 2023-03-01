@@ -1,4 +1,5 @@
 @import "components/collapsible";
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Lora:ital@0;1&family=Martian+Mono&family=Montserrat:wght@300&family=Nunito:wght@300;400&family=Open+Sans:wght@300;400&family=Orbitron:wght@800;900&family=Playfair+Display+SC:wght@400;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;700;800&display=swap');
 
 .bookings-container {
   float: right;
@@ -11,4 +12,29 @@
 
 .costumes-container {
   background-color: transparent;
+  margin-left: 145px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display';
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+
+.glow {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }
