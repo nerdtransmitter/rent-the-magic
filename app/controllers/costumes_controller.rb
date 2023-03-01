@@ -61,6 +61,6 @@ class CostumesController < ApplicationController
   end
 
   def costume_params
-    params.require(:costume).permit(:size, :category, :price, :name, :photo)
+    params.require(:costume).permit(:size, :category, :price, :name, :photo, :description)
   end
 end
