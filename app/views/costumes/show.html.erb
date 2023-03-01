@@ -22,6 +22,11 @@
         </div>
   </div>
 
+  <div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
+  data-controller="map"
+  data-map-markers-value="<%= @marker.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
 </div>
 

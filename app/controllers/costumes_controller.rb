@@ -15,6 +15,7 @@ class CostumesController < ApplicationController
 
   def show
     authorize @costume
+    @marker = [{lat: @costume.latitude, lng: @costume.longitude, marker_html: render_to_string(partial: "marker")}]
   end
 
   def new
