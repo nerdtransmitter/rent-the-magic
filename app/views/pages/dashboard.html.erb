@@ -65,12 +65,14 @@
           <div class="booking-cards">
             <% @requests.each do |request| %>
               <% request.each do |r| %>
-                <div class="card-request d-flex bg-white p-2 mb-3 rounded collapsible">
-                  <div>
-                    <p><strong>From: </strong><%= r.start_date %></p>
-                    <p><strong>To: </strong><%= r.end_date %></p>
+                <div class="card-request bg-white p-2 mb-3 rounded collapsible">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <p><strong></strong><%= r.start_date %> <i class="fa-solid fa-arrow-right"></i> <%= r.end_date %></p>
+                    <%= button_to approve_booking_path(r),
+                      class: "btn btn-ghost" do %>
+                      <i class="fa-solid fa-thumbs-up"></i>
+                    <% end %>
                   </div>
-                  <%= button_to 'Approve', approve_booking_path(r), class: "btn btn-ghost" %>
                   <% if r.state == 'approved'%>
                     <%= image_tag 'approved', class: "approved" %>
                   <% end %>
