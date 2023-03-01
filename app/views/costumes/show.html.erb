@@ -1,31 +1,33 @@
-   <%= link_to "Back to costumes", costumes_path, class: "btn-flat btn-show text-decoration-none float-start " %>
 
-<div class="container "> 
-  <div  class="no-gutters">
 
-      <div class="me-5 d-flex justify-content-between">
-        <div class="card">
-          <h3 class="card-title"><%= @costume.name %></h3>
-          <div class="card-img-container">
-            <%= cl_image_tag @costume.photo.key, height: 300, width: 200, crop: :fill %>
-          </div>
-            <p class="card-price"><%= number_to_currency(@costume.price) %></p>
-            <%= @costume.description %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mb-3">
+      <div class="card">
+        <h3 class="card-title"><%= @costume.name %></h3>
+        <div class="card-img-container">
+          <%= cl_image_tag @costume.photo.key, height: 300, width: 200, crop: :fill %>
         </div>
-        <%= render "bookings/form", booking: Booking.new, costume: @costume %>
+        <div class="card-body">
+          <p class="card-price"><%= number_to_currency(@costume.price) %></p>
+          <p class="card-text"><%= @costume.description %></p>
+        </div>
       </div>
-      
-    <div class="">
-      <div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
+    </div>
+    <div class="card col-lg-6">
+      <%= render "bookings/form", booking: Booking.new, costume: @costume %>
+    <%# <div class="col-lg-6"> %>
+      <div style="height: 250px;" class="rounded;"
         data-controller="map"
         data-map-markers-value="<%= @marker.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      <div class="p-3 d-flex flex-column">
-        <%= image_tag "illu1.PNG", class: "fairy align-self-end" %>
-      </div>
     </div>
-    
+    </div>
   </div>
-</div>
+    <div class="col-lg-8">
+      <%= image_tag "illu1.PNG", class: "fairy align-self-end" %>
+    </div>
+
+<%= link_to "Back to costumes", costumes_path, class: "btn-flat btn-show text-decoration-none float-start " %>
 
