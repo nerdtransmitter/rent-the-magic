@@ -1,5 +1,17 @@
-<%= simple_form_for([costume, booking]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <%= simple_form_for([costume, booking]) do |f| %>
+  <div class="col">
+    <%= f.input :start_date, as: :string,
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
+  </div>
+  <div class="col">
+    <%= f.input :end_date, as: :string,
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
+    <%= f.submit class: "btn-ghost fw-bolder"%>
+  </div>
+  <% end %>
+</div>
