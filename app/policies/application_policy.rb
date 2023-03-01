@@ -39,7 +39,7 @@ class ApplicationPolicy
   def approve?
     false
   end
-  
+
   class Scope
     def initialize(user, scope)
       @user = user
