@@ -4,7 +4,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    record.user != user
+    record.costume.user != user
   end
 
   def edit?

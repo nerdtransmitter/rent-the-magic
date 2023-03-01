@@ -13,6 +13,7 @@
 
 .btn-ghost {
   color: #416259;
+  background-color: #E2CFF4;
   border: 1px solid #4A4A4A;
   padding: 8px 18px;
   border-radius: 50px;
@@ -20,14 +21,57 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin: 20px 10px 0 10px;
+
 }
 
 .btn-ghost:hover {
   opacity: 1;
 }
 
+
+.half-btn {
+  width: 50%;
+  text-decoration: none;
+}
+
 .btn-show {
   margin-left: 50px;
   width: fit-content;
-  
+
+}
+
+
+.btn-log {
+  color: #416242;
+  background-color: #E2CFF4;
+  border: 1px solid #4A4A4A;
+  font-style: italic;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 20px 10px 0 10px;
+
+}
+
+.btn-log:hover {
+  opacity: 1;
+}
+
+.btn-create {
+  color: #416242;
+  background-color: #E2CFF4;
+  border: 1px solid #4A4A4A;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 20px 10px 0 10px;
+
+}
+
+.btn-create:hover {
+  opacity: 1;
 }

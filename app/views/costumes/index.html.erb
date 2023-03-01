@@ -1,4 +1,5 @@
 <h1 class="text-center fw-bolder m-3">Rent The Magic</h1>
+
 <div class="cards">
   <% @costumes.each do |costume| %>
   <div class="card">
@@ -7,7 +8,14 @@
       <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
     </div>
     <p class="card-price"><%= number_to_currency(costume.price) %></p>
+    <p><%= costume.location %></p>
     <%= link_to "Rent this costume!", costume_path(costume), class: "btn btn-ghost mb-3 fw-bolder"%>
   </div>
   <% end %>
+</div>
+
+<div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>

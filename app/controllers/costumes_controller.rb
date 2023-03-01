@@ -3,6 +3,14 @@ class CostumesController < ApplicationController
 
   def index
     @costumes = policy_scope(Costume)
+    @markers = @costumes.geocoded.map do |costume|
+      {
+        lat: costume.latitude,
+        lng: costume.longitude,
+        info_html: render_to_string(partial: "info", locals: {costume: costume}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def show
@@ -53,6 +61,6 @@ class CostumesController < ApplicationController
   end
 
   def costume_params
-    params.require(:costume).permit(:size, :category, :price, :name, :photo)
+    params.require(:costume).permit(:size, :category, :price, :name, :photo, :description)
   end
 end
