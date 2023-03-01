@@ -1,35 +1,31 @@
    <%= link_to "Back to costumes", costumes_path, class: "btn-flat btn-show text-decoration-none float-start " %>
 
-<div class="container mt-5 ">
+<div class="container "> 
+  <div  class="no-gutters">
 
-  <div class="row no-gutters">
-      <div class="card col-5 me-5">
-        <h3 class="card-title"><%= @costume.name %></h3>
-        <div class="card-img-container d-flex justify-content-center align-items-center w-100">
-          <%= cl_image_tag @costume.photo.key, height: 300, width: 200, crop: :fill %>
+      <div class="me-5 d-flex justify-content-between">
+        <div class="card">
+          <h3 class="card-title"><%= @costume.name %></h3>
+          <div class="card-img-container">
+            <%= cl_image_tag @costume.photo.key, height: 300, width: 200, crop: :fill %>
+          </div>
+            <p class="card-price"><%= number_to_currency(@costume.price) %></p>
+            <%= @costume.description %>
         </div>
-          <p class="card-price"><%= number_to_currency(@costume.price) %></p>
-          <p>
-          <%= @costume.description %>
+        <%= render "bookings/form", booking: Booking.new, costume: @costume %>
       </div>
-
-        <div class="card mt-5 mb-1 col-5 ">
-            <div class="">
-              <div class="card-body">
-                  <%= render "bookings/form", booking: Booking.new, costume: @costume %>
-              </div>
-            </div>
-        </div>
+      
+    <div class="">
+      <div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
+        data-controller="map"
+        data-map-markers-value="<%= @marker.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <div class="p-3 d-flex flex-column">
+        <%= image_tag "illu1.PNG", class: "fairy align-self-end" %>
+      </div>
+    </div>
+    
   </div>
-
-  <div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
-  data-controller="map"
-  data-map-markers-value="<%= @marker.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
 </div>
 
-<div class="p-3 d-flex flex-column">
-  <%= image_tag "illu1.PNG", class: "fairy align-self-end" %>
-</div>

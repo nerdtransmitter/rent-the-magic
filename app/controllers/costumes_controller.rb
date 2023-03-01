@@ -29,7 +29,7 @@ class CostumesController < ApplicationController
     @costume.user = current_user
     authorize @costume
     if @costume.save
-      redirect_to costume_path(@costume)
+      redirect_to dashboard_path(@costume)
     else
       render :new, status: :unprocessable_entity
     end
