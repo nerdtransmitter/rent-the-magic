@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[edit update destroy approve]
+  before_action :set_booking, only: %i[show edit update destroy approve]
 
   # def index
   #   @bookings = policy_scope(Booking)
   # end
+  def show
+  end
 
   def new
     @costume = Costume.find(params[:costume_id])
