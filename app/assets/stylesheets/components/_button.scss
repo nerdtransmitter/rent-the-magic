@@ -20,10 +20,17 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin: 20px 10px 0 10px;
+
 }
 
 .btn-ghost:hover {
   opacity: 1;
+}
+
+
+.half-btn {
+  width: 50%;
+  text-decoration: none;
 }
 
 .btn-show {
