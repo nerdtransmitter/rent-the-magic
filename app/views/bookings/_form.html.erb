@@ -1,16 +1,43 @@
-<div class="row">
-  <%= simple_form_for([costume, booking]) do |f| %>
-  <div class="col">
-    <%= f.input :start_date, as: :string,
-                wrapper_html: { class: "mb-4" },
-                label_html: { class: "form-label text-secondary fw-bold" },
-                input_html: { data: { controller: "flatpickr" } } %>
-    <%= f.input :end_date, as: :string,
-                wrapper_html: { class: "mb-4" },
-                label_html: { class: "form-label text-secondary fw-bold" },
-                input_html: { data: { controller: "flatpickr" } } %>
-    <%= f.submit 'Rent', class: "btn-ghost fw-bolder"%>
-  </div>
-  <% end %>
-</div>
 
+<div class="col-4">
+  <div class="product-show-card" data-controller="dynamic-booking-price"
+      data-dynamic-booking-price-price-value="<%= @product.price_per_day %>">
+
+    <div class="test p-4 shadow d-flex justify-content-center align-items-center text-center">
+        <%= simple_form_for [@costume, @booking], html: {
+              data: {
+                controller: 'flatpickr',
+                flatpickr_dates_value: @costume.flatpickr_booked_dates_object
+              }
+            }  do |f| %>
+          <h5>Book this costume!</h5>
+
+          <%= f.input :start_date, label: false, as: :string,
+                                  input_html: {
+                                    class: 'd-none',
+                                    data: {
+                                      flatpickr_target: 'startDateInput',
+                                      dynamic_booking_price_target: 'startDateInput',
+                                      action: 'change->dynamic-booking-price#updatePrice'
+                                    }
+                                } %>
+          <%= f.input :end_date, label: false, as: :string,
+                                  input_html: {
+                                    class: 'd-none',
+                                    data: {
+                                      flatpickr_target: 'endDateInput',
+                                      dynamic_booking_price_target: 'endDateInput',
+                                      action: 'change->dynamic-booking-price#updatePrice'
+                                    }
+                                } %>
+          <p>
+            <span>Total Price = </span><span data-dynamic-booking-price-target="priceHolder"><%= @costume.price_per_day %></span>
+            <span>€</span>
+          </p>
+          <%= f.input :costume_id, as: :hidden, input_html: { value: @costume.id } %>
+          <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+          <%= f.submit 'Rent', class: "btn-ghost fw-bolder"%>
+        <% end %>
+    </div>
+  </div>
+</div>
