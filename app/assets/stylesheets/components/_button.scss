@@ -30,6 +30,23 @@
   transition: opacity 1s ease;
 }
 
+.btn-white {
+  color: #416259;
+  background-color: #E2CFF4;
+  border: 1px solid #4A4A4A;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  margin: 0px 10px 0 10px;
+
+}
+
+.btn-white:hover {
+  opacity: 1;
+  color: white
+}
+
 
 .half-btn {
   width: 50%;
