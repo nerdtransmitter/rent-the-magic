@@ -1,4 +1,5 @@
 <%# <div class="container"> %>
+<h2>Hello  <%=  current_user.email %></h2>
 <div class="d-flex justify-content-between">
 
 
@@ -42,7 +43,9 @@
                     <p><strong></strong><%= booking.start_date %> <i class="fa-solid fa-arrow-right"></i> <%= booking.end_date %></p>
                     <div class="d-flex text-end">
                       <% if policy(booking).edit? %>
-                        <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-ghost" %>
+                        <%= link_to edit_booking_path(booking), class: "btn btn-ghost" do %>
+                          <i class="fa-solid fa-pen-to-square"></i>
+                        <% end %>
                       <% end %>
                       <%= button_to booking,
                         method: :delete,
@@ -62,6 +65,7 @@
             <% @requests.each do |request| %>
               <% request.each do |r| %>
                 <div class="card-request bg-white p-2 mb-3 rounded collapsible d-flex justify-content-between">
+                  <%= cl_image_tag r.costume.photo.key %>
                   <div>
                     <h5><%= r.costume.name %></h5>
                     <p style="font-family: 'Poppins'"><%= r.start_date %> <i class="fa-solid fa-arrow-right"></i> <%= r.end_date %></p>

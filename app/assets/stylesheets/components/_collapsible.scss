@@ -21,6 +21,8 @@ button{
 
 .active, .collapsible:hover {
   background-color: rgba($color: white, $alpha: .9);
+  border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 /* Style the collapsible content. Note: hidden by default */
@@ -34,7 +36,6 @@ button{
   // justify-content: space-between;
   // align-items: center;
   position: relative;
-  
   p {
     font-family: 'Poppins' !important;
 
