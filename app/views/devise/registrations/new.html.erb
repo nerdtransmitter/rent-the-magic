@@ -1,8 +1,10 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+    <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
-  <%= f.error_notification %>
-
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
+      <%= f.error_notification %>
   <div class="form-inputs">
     <%= f.input :email,
                 required: true,
@@ -21,9 +23,15 @@
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+      <div class="form-actions">
+       <div class="btn-log half-btn">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+         <div class="btn-log half-btn">
+          <%= render "devise/shared/links" %>
+          </div>
+    </div>
+  </div>
+</div>

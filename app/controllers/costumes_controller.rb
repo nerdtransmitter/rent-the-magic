@@ -11,7 +11,15 @@ class CostumesController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
+
+    if params[:query].present?
+      @costumes = Costume.search_by_name_and_category(params[:query])
+    else
+      @costumes = Costume.all
+    end
+
   end
+
 
   def show
     authorize @costume
