@@ -67,6 +67,8 @@ costume4.user = user
 costume4.save
 
 file5 = URI.open("https://m.media-amazon.com/images/I/71zHdmHLLvL._AC_SL1500_.jpg")
+file6 = URI.open("https://m.media-amazon.com/images/I/61ygOgvKqsS._AC_SL1500_.jpg")
+
  costume5 = Costume.new(
   name: "WICH",
   category: "Wich",
@@ -75,6 +77,7 @@ file5 = URI.open("https://m.media-amazon.com/images/I/71zHdmHLLvL._AC_SL1500_.jp
   location: "13 rue pigalle, 75010 PARIS"
  )
 costume5.photos.attach(io: file5, filename: "licorne.png", content_type: "image/png")
+costume5.photos.attach(io: file6, filename: "licorne.png", content_type: "image/png")
 costume5.user = user
 costume5.save
 
