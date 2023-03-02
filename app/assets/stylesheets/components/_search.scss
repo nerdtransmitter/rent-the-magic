@@ -1,4 +1,17 @@
 .search-form {
   max-width: 300px; /* set the maximum width */
-  // margin: 0 auto; /* 
+  // margin: 0 auto; /*
+}
+
+.container-map-search {
+  padding: 0 30px;
+  color: white;
+  font-family: 'Poppins';
+  border-radius: 7px;
+  position: sticky;
+}
+
+.map {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
