@@ -4,8 +4,16 @@
       <div class="card">
         <h3 class="card-title"><%= @costume.name %></h3>
         <div class="card-img-container">
-          <%= cl_image_tag @costume.photos.key, height: 300, width: 200, crop: :fill %>
+        <% if @costume.photos.attached? %>
+          <%= @costume.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 200, crop: :fill %>
+          <% end %>
         </div>
+        <% else %>
+        <p><%=  mettre une image de placeholder %></p>
+         
+        <% end %>
+        
         <div class="card-body">
           <p class="card-price"><%= number_to_currency(@costume.price) %></p>
           <p class="card-text"><%= @costume.description %></p>
