@@ -22,7 +22,9 @@ costume = Costume.new(
   category: "Fantastic beasts",
   size: "L",
   price: 19.99,
-  location: "25 rue Doudeauville, 75018 PARIS"
+  location: "25 rue Doudeauville, 75018 PARIS",
+  description: "Amaizing costume !!!!!"
+  
 )
 costume.photo.attach(io: file, filename: "dragoness.png", content_type: "image/png")
 costume.user = user
@@ -63,5 +65,19 @@ costume4 = Costume.new(
 costume4.photo.attach(io: file4, filename: "licorne.png", content_type: "image/png")
 costume4.user = user
 costume4.save
+
+file5 = URI.open("https://m.media-amazon.com/images/I/71zHdmHLLvL._AC_SL1500_.jpg")
+ costume5 = Costume.new(
+  name: "WICH",
+  category: "Wich",
+  size: "XS",
+  price: 74.99,
+  location: "13 rue pigalle, 75010 PARIS"
+ )
+costume5.photo.attach(io: file5, filename: "licorne.png", content_type: "image/png")
+costume5.user = user
+costume5.save
+
+
 
 
