@@ -1,11 +1,11 @@
 
-<%= form_with url: costumes_path, method: :get, class: "d-flex" do %>
+<%= form_with url: costumes_path, method: :get, class: "d-flex p-5 search-form" do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "form-control border rounded-pill",
     placeholder: "Find a costume"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn btn-primary border rounded-pill" %>
 <% end %>
 
 <h1 class="text-center fw-bolder m-3">Rent The Magic</h1>
