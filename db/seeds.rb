@@ -16,68 +16,85 @@ u3 = User.create!(email: "martial@test.com", password: "auroretest", password_co
 u = User.create!(email: "aurore@test.com", password: "auroretest", password_confirmation: "auroretest")
 
 user = User.all.sample
-file = URI.open("https://i.pinimg.com/564x/63/c9/e3/63c9e3898b534be37eee0dbb777204e1.jpg")
+file = URI.open("https://i.ebayimg.com/images/g/UxQAAOSwDO1j50E1/s-l1600.jpg")
+file1 = URI.open("https://i.ebayimg.com/images/g/VZYAAOSw4jFj50E0/s-l1600.jpg")
+file2 = URI.open("https://i.ebayimg.com/images/g/OJIAAOSwJshj50Ez/s-l1600.jpg")
 costume = Costume.new(
-  name: "Dragon",
-  category: "Fantastic beasts",
-  size: "L",
+  name: "Women's Enchanted Unicorn Costume",
+  category: "Unicorn",
+  size: "s",
   price: 19.99,
   location: "25 rue Doudeauville, 75018 PARIS",
-  description: "Amaizing costume !!!!!"
-  
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo." 
 )
-costume.photos.attach(io: file, filename: "dragoness.png", content_type: "image/png")
+costume.photos.attach(io: file, filename: "unicorn.png", content_type: "image/png")
+costume.photos.attach(io: file1, filename: "unicorn.png", content_type: "image/png")
+costume.photos.attach(io: file2, filename: "unicorn.png", content_type: "image/png")
 costume.user = user
 costume.save!
 
-file2 = URI.open("https://i.pinimg.com/564x/9b/a7/b5/9ba7b5d376047fa973740704e0768f20.jpg")
+file2 = URI.open("https://i.mmo.cm/is/image/mmoimg/mw-product-zoom/deguisement-de-licorne-couleurs-pastel--mw-135984-1.jpg")
+file3 = URI.open("https://i.mmo.cm/is/image/mmoimg/mw-product-zoom/deguisement-de-licorne-couleurs-pastel--mw-135984-2.jpg")
 costume2 = Costume.new(
-  name: "Mother of Dragons",
-  category: "Character",
+  name: "Unicorn",
+  category: "Unicorn",
   size: "S",
-  price: 55.99,
-  location: "16 avenue de Laumière, 75019 PARIS"
+  price: 15.99,
+  location: "16 avenue de Laumière, 75019 PARIS",
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
 )
-costume2.photos.attach(io: file2, filename: "dani.png", content_type: "image/png")
+costume2.photos.attach(io: file2, filename: "unicornpastel.png", content_type: "image/png")
+costume2.photos.attach(io: file3, filename: "unicornpastel.png", content_type: "image/png")
 costume2.user = user
 costume2.save
 
-file3 = URI.open("https://i.pinimg.com/564x/ae/a1/ed/aea1ed522805bac3ba96de1538e82d7a.jpg")
+file3 = URI.open("https://m.media-amazon.com/images/I/51SZnl4bALL._AC_UL1001_.jpg")
+file4 = URI.open("https://m.media-amazon.com/images/I/51hGlkr7ieL._AC_UL1001_.jpg")
+file5 = URI.open("https://m.media-amazon.com/images/I/51erm1DdR4L._AC_UL1001_.jpg")
 costume3 = Costume.new(
-  name: "Jon Snow",
+  name: "Princesses",
   category: "Character",
-  size: "XL",
-  price: 47.99,
-  location: "5 rue calmels prolongée, 75018 PARIS"
+  size: "S",
+  price: 10.99,
+  location: "5 rue calmels prolongée, 75018 PARIS",
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
 )
-costume3.photos.attach(io: file3, filename: "jon.png", content_type: "image/png")
+costume3.photos.attach(io: file3, filename: "pricessgold.png", content_type: "image/png")
+costume3.photos.attach(io: file4, filename: "princessgold.png", content_type: "image/png")
+costume3.photos.attach(io: file5, filename: "princessgold.png", content_type: "image/png")
 costume3.user = user
 costume3.save
 
-file4 = URI.open("https://i.pinimg.com/564x/10/55/df/1055df347fe6c3b32c8ad9cfcda7b28d.jpg")
+file4 = URI.open("https://m.media-amazon.com/images/I/510smS7vX8L._AC_UL1001_.jpg")
+file5 = URI.open("https://m.media-amazon.com/images/I/51OBdwNLN-L._AC_UL1001_.jpg")
+file6 = URI.open("https://m.media-amazon.com/images/I/51l1uSpbrTL._AC_UL1001_.jpg")
 costume4 = Costume.new(
-  name: "Unicorn",
-  category: "Fantastic beasts",
-  size: "XS",
-  price: 74.99,
-  location: "13 rue pigalle, 75010 PARIS"
+  name: "Princesses",
+  category: "Character",
+  size: "S",
+  price: 10.99,
+  location: "9 rue calmels prolongée, 75018 PARIS",
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
 )
-costume4.photos.attach(io: file4, filename: "licorne.png", content_type: "image/png")
+costume4.photos.attach(io: file4, filename: "pricessblue.png", content_type: "image/png")
+costume4.photos.attach(io: file5, filename: "princessblue.png", content_type: "image/png")
+costume4.photos.attach(io: file6, filename: "princessblue.png", content_type: "image/png")
 costume4.user = user
 costume4.save
 
-file5 = URI.open("https://m.media-amazon.com/images/I/71zHdmHLLvL._AC_SL1500_.jpg")
-file6 = URI.open("https://m.media-amazon.com/images/I/61ygOgvKqsS._AC_SL1500_.jpg")
+file7 = URI.open("https://m.media-amazon.com/images/I/71zHdmHLLvL._AC_SL1500_.jpg")
+file8 = URI.open("https://m.media-amazon.com/images/I/61ygOgvKqsS._AC_SL1500_.jpg")
 
  costume5 = Costume.new(
   name: "WICH",
   category: "Wich",
   size: "XS",
-  price: 74.99,
-  location: "13 rue pigalle, 75010 PARIS"
+  price: 22.99,
+  location: "13 rue pigalle, 75010 PARIS",
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
  )
-costume5.photos.attach(io: file5, filename: "licorne.png", content_type: "image/png")
-costume5.photos.attach(io: file6, filename: "licorne.png", content_type: "image/png")
+costume5.photos.attach(io: file7, filename: "licorne.png", content_type: "image/png")
+costume5.photos.attach(io: file8, filename: "licorne.png", content_type: "image/png")
 costume5.user = user
 costume5.save
 
