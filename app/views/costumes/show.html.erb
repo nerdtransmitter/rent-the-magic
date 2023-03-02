@@ -4,7 +4,7 @@
       <div class="card">
         <h3 class="card-title"><%= @costume.name %></h3>
         <div class="card-img-container">
-          <%= cl_image_tag @costume.photo.key, height: 300, width: 200, crop: :fill %>
+          <%= cl_image_tag @costume.photos.key, height: 300, width: 200, crop: :fill %>
         </div>
         <div class="card-body">
           <p class="card-price"><%= number_to_currency(@costume.price) %></p>

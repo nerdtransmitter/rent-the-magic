@@ -26,7 +26,7 @@ costume = Costume.new(
   description: "Amaizing costume !!!!!"
   
 )
-costume.photo.attach(io: file, filename: "dragoness.png", content_type: "image/png")
+costume.photos.attach(io: file, filename: "dragoness.png", content_type: "image/png")
 costume.user = user
 costume.save!
 
@@ -38,7 +38,7 @@ costume2 = Costume.new(
   price: 55.99,
   location: "16 avenue de Laumière, 75019 PARIS"
 )
-costume2.photo.attach(io: file2, filename: "dani.png", content_type: "image/png")
+costume2.photos.attach(io: file2, filename: "dani.png", content_type: "image/png")
 costume2.user = user
 costume2.save
 
@@ -50,7 +50,7 @@ costume3 = Costume.new(
   price: 47.99,
   location: "5 rue calmels prolongée, 75018 PARIS"
 )
-costume3.photo.attach(io: file3, filename: "jon.png", content_type: "image/png")
+costume3.photos.attach(io: file3, filename: "jon.png", content_type: "image/png")
 costume3.user = user
 costume3.save
 
@@ -62,7 +62,7 @@ costume4 = Costume.new(
   price: 74.99,
   location: "13 rue pigalle, 75010 PARIS"
 )
-costume4.photo.attach(io: file4, filename: "licorne.png", content_type: "image/png")
+costume4.photos.attach(io: file4, filename: "licorne.png", content_type: "image/png")
 costume4.user = user
 costume4.save
 
@@ -74,10 +74,8 @@ file5 = URI.open("https://m.media-amazon.com/images/I/71zHdmHLLvL._AC_SL1500_.jp
   price: 74.99,
   location: "13 rue pigalle, 75010 PARIS"
  )
-costume5.photo.attach(io: file5, filename: "licorne.png", content_type: "image/png")
+costume5.photos.attach(io: file5, filename: "licorne.png", content_type: "image/png")
 costume5.user = user
 costume5.save
-
-
 
 
