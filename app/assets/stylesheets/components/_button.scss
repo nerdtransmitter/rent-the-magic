@@ -12,9 +12,9 @@
 }
 
 .btn-ghost {
-  color: #416259;
-  background-color: #E2CFF4;
-  border: 1px solid #4A4A4A;
+  color: $dark-violet;
+  //background-color: #E2CFF4;
+  border: 1px solid $dark-violet;
   padding: 8px 18px;
   border-radius: 50px;
   font-weight: lighter;
@@ -25,7 +25,9 @@
 }
 
 .btn-ghost:hover {
-  opacity: 1;
+  color: $pastel-violet;
+  border: 1px solid $pastel-violet;
+  transition: opacity 1s ease;
 }
 
 
