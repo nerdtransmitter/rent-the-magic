@@ -24,7 +24,7 @@ costume = Costume.new(
   price: 19.99,
   location: "25 rue Doudeauville, 75018 PARIS",
   description: "Amaizing costume !!!!!"
-  
+
 )
 costume.photos.attach(io: file, filename: "dragoness.png", content_type: "image/png")
 costume.user = user
@@ -80,5 +80,4 @@ costume5.photos.attach(io: file5, filename: "licorne.png", content_type: "image/
 costume5.photos.attach(io: file6, filename: "licorne.png", content_type: "image/png")
 costume5.user = user
 costume5.save
-
 
