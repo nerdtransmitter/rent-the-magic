@@ -1,44 +1,59 @@
-<h1 class="my-5 p-2 text-center glow">Rent The Magic</h1>
 
-<%= form_with url: costumes_path, method: :get, class: "d-flex p-3 search-form" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control border rounded-pill",
-    placeholder: "Find a costume"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary border rounded-pill" %>
-<% end %>
 
-<div class="costumes-container rounded">
 
-  <div class="cards-costumes cards text-center w-100">
-    <% @costumes.each do |costume| %>
-      <div class="card-costume shadow-lg" style="background-image: url(<%= cl_image_path costume.photos.first.key %>)">
-        <div class="overlay"></div>
-        <div class="card-buttons">
-            <% if policy(costume).edit? %>
-              <%= link_to "Edit", edit_costume_path(costume), class: "btn btn-white" %>
-            <% end %>
-            <!-- [...] -->
-            <%= button_to costume,
-              method: :delete,
-              data: { turbo_confirm: "Are you sure?" },
-              class: "btn btn-white" do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end if policy(costume).destroy? %>
-          </div>
-        <div class="costume-info">
-          <h4><%= costume.name %></h4>
-          <%# <h4 class="card-price fw-bolder"><small><%= number_to_currency(costume.price) %>
-          <%# </small></h4> %>
-        </div>
-      </div>
+
+<%# <div class="container"> %>
+  <div class="d-flex w-100 justify-content-center align-items-center">
+    <h1 class="p-1 text-center">discover costumes</h1>
+    <%= form_with url: costumes_path, method: :get, class: "d-flex p-3 search-form" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control border rounded-pill",
+        placeholder: "Find a costume"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary border rounded-pill" %>
     <% end %>
   </div>
-</div>
 
-<div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+  <div class="d-flex justify-content-between mr-4 py-3">
+    <div class="ml-5 cards text-center ">
+      <% @costumes.each do |costume| %>
+        <div class="card-costume shadow-lg" style="background-image: url(<%= cl_image_path costume.photos.first.key %>)">
+          <div class="overlay"></div>
+          <div class="card-buttons">
+              <% if policy(costume).edit? %>
+                <%= link_to "Edit", edit_costume_path(costume), class: "btn btn-white" %>
+              <% end %>
+              <!-- [...] -->
+              <%= button_to costume,
+                method: :delete,
+                data: { turbo_confirm: "Are you sure?" },
+                class: "btn btn-white" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end if policy(costume).destroy? %>
+            </div>
+          <div class="costume-info">
+            <h4><%= costume.name %></h4>
+            <%# <h4 class="card-price fw-bolder"><small><%= number_to_currency(costume.price) %>
+            <%# </small></h4> %>
+          </div>
+          <div class="costume-info-card bg-white p-3 justify-content-between">
+            <p class="card-price"><%= number_to_currency(costume.price) %></p>
+            <%= link_to "Rent", costume_path(costume), class: "btn btn-ghost mb-3 fw-bolder"%>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+
+    <div class="container-map-search">
+
+      <div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+  <%# </div> %>
+<%# </div> %>
