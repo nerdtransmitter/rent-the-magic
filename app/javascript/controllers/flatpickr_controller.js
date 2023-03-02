@@ -4,7 +4,8 @@ import flatpickr from "flatpickr";
 export default class extends Controller {
   connect() {
     new flatpickr(this.element, {
-      enableTime: true
+      enableTime: true,
+      inline: true
       // more options available on the documentation!
     });
   }
