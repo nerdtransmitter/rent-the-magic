@@ -1,5 +1,7 @@
-<%# <div class="container"> %>
-<h2>Hello  <%=  current_user.email %></h2>
+<div class="ml-4 p-3 d-flex align-items-center">
+  <%= image_tag "avatar.png", class: "avatar-large" %>
+  <h2 class="mx-4" >Hello  <%=  current_user.first_name %></h2>
+</div>
 <div class="d-flex justify-content-between">
 
 
