@@ -3,6 +3,16 @@ class CostumesController < ApplicationController
 
   def index
     @costumes = policy_scope(Costume)
+
+    if params[:query].present?
+      @costumes = Costume.search_by_name_and_category(params[:query])
+      if @costumes.empty?
+       @costumes = Costume.all
+      end
+    else
+      @costumes = Costume.all
+    end
+
     @markers = @costumes.geocoded.map do |costume|
       {
         lat: costume.latitude,
@@ -10,12 +20,6 @@ class CostumesController < ApplicationController
         info_html: render_to_string(partial: "info", locals: {costume: costume}),
         marker_html: render_to_string(partial: "marker")
       }
-    end
-
-    if params[:query].present?
-      @costumes = Costume.search_by_name_and_category(params[:query])
-    else
-      @costumes = Costume.all
     end
 
   end
