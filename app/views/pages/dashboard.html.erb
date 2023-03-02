@@ -8,7 +8,7 @@
 
       <div class="cards-costumes text-center w-100">
         <% @costumes.each do |costume| %>
-          <div class="card-costume shadow-lg" style="background-image: url(<%=cl_image_path costume.photos.key%>)">
+          <div class="card-costume shadow-lg" style="background-image: url(<%=cl_image_path costume.photos.first.key%>)">
             <div class="overlay"></div>
             <div class="card-buttons">
                 <% if policy(costume).edit? %>
