@@ -1,16 +1,15 @@
 
-<div class="col-4">
+<div class="">
   <div class="product-show-card" data-controller="dynamic-booking-price"
       data-dynamic-booking-price-price-value="<%= @costume.price %>">
 
-    <div class="card ">
+    <div class="">
         <%= simple_form_for [@costume, @booking], html: {
               data: {
                 controller: 'flatpickr',
                 flatpickr_dates_value: @costume.flatpickr_booked_dates_object
               }
             }  do |f| %>
-          <h5>Book this costume!</h5>
           <%= f.input :start_date, label: false, as: :string,
                                   input_html: {
                                     class: 'd-none',
@@ -31,7 +30,7 @@
                                 } %>
           <%= f.input :costume_id, as: :hidden, input_html: { value: @costume.id } %>
           <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-          <%= f.submit 'Rent', class: "btn-ghost fw-bolder"%>
+          <%= f.submit 'Rent this costume', class: "btn-flat border-0 w-100"%>
         <% end %>
     </div>
   </div>

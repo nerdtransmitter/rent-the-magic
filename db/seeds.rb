@@ -10,10 +10,10 @@ require "open-uri"
 
 Costume.destroy_all
 User.destroy_all
-u1 = User.create!(email: "alessia@test.com", password: "auroretest", password_confirmation: "auroretest")
-u2 = User.create!(email: "olga@test.com", password: "auroretest", password_confirmation: "auroretest")
-u3 = User.create!(email: "martial@test.com", password: "auroretest", password_confirmation: "auroretest")
-u = User.create!(email: "aurore@test.com", password: "auroretest", password_confirmation: "auroretest")
+u1 = User.create!(email: "alessia@test.com", password: "auroretest", password_confirmation: "auroretest", first_name: "Alessia")
+u2 = User.create!(email: "olga@test.com", password: "auroretest", password_confirmation: "auroretest", first_name: "Olga")
+u3 = User.create!(email: "martial@test.com", password: "auroretest", password_confirmation: "auroretest", first_name: "Martial")
+u = User.create!(email: "aurore@test.com", password: "auroretest", password_confirmation: "auroretest", first_name: "Aurore")
 
 user = User.all.sample
 file = URI.open("https://i.ebayimg.com/images/g/UxQAAOSwDO1j50E1/s-l1600.jpg")
@@ -25,7 +25,7 @@ costume = Costume.new(
   size: "s",
   price: 19.99,
   location: "25 rue Doudeauville, 75018 PARIS",
-  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo." 
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. " 
 )
 costume.photos.attach(io: file, filename: "unicorn.png", content_type: "image/png")
 costume.photos.attach(io: file1, filename: "unicorn.png", content_type: "image/png")
@@ -41,7 +41,7 @@ costume2 = Costume.new(
   size: "S",
   price: 15.99,
   location: "16 avenue de Laumière, 75019 PARIS",
-  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
 )
 costume2.photos.attach(io: file2, filename: "unicornpastel.png", content_type: "image/png")
 costume2.photos.attach(io: file3, filename: "unicornpastel.png", content_type: "image/png")
@@ -57,7 +57,7 @@ costume3 = Costume.new(
   size: "S",
   price: 10.99,
   location: "5 rue calmels prolongée, 75018 PARIS",
-  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
 )
 costume3.photos.attach(io: file3, filename: "pricessgold.png", content_type: "image/png")
 costume3.photos.attach(io: file4, filename: "princessgold.png", content_type: "image/png")
@@ -74,7 +74,7 @@ costume4 = Costume.new(
   size: "S",
   price: 10.99,
   location: "9 rue calmels prolongée, 75018 PARIS",
-  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
 )
 costume4.photos.attach(io: file4, filename: "pricessblue.png", content_type: "image/png")
 costume4.photos.attach(io: file5, filename: "princessblue.png", content_type: "image/png")
@@ -91,7 +91,7 @@ file8 = URI.open("https://m.media-amazon.com/images/I/61ygOgvKqsS._AC_SL1500_.jp
   size: "XS",
   price: 22.99,
   location: "13 rue pigalle, 75010 PARIS",
-  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+  description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
  )
 costume5.photos.attach(io: file7, filename: "licorne.png", content_type: "image/png")
 costume5.photos.attach(io: file8, filename: "licorne.png", content_type: "image/png")
