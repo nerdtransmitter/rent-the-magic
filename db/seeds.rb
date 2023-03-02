@@ -79,5 +79,3 @@ costume5.user = user
 costume5.save
 
 
-
-
