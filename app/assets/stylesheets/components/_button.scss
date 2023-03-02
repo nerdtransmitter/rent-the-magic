@@ -48,10 +48,52 @@
 }
 
 
-.half-btn {
+.btn-ghost-half {
+  color: $dark-violet;
+  //background-color: #E2CFF4;
+  border: 1px solid $dark-violet;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 0px 10px 0 10px;
   width: 50%;
   text-decoration: none;
+
 }
+
+.btn-ghost-half:hover {
+  color: $pastel-violet;
+  border: 1px solid $pastel-violet;
+  transition: opacity 1s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .btn-show {
   margin-left: 50px;
@@ -61,7 +103,7 @@
 
 
 .btn-log {
-  color: $dark-violet;
+  color: #416242;
   background-color: #E2CFF4;
   border: 1px solid #4A4A4A;
   font-style: italic;
@@ -93,4 +135,23 @@
 
 .btn-create:hover {
   opacity: 1;
+}
+
+.btn-book {
+  color: $dark-violet;
+  //background-color: #E2CFF4;
+  border: 1px solid $dark-violet;
+  padding: 8px 12px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 0px 5px;
+
+}
+
+.btn-book:hover {
+  color: $pastel-violet;
+  border: 1px solid $pastel-violet;
+  transition: opacity 1s ease;
 }
