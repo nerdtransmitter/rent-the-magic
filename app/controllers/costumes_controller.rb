@@ -27,6 +27,7 @@ class CostumesController < ApplicationController
 
   def show
     authorize @costume
+    @booking = Booking.new
     @marker = [{lat: @costume.latitude, lng: @costume.longitude, marker_html: render_to_string(partial: "marker"), info_html: render_to_string(partial: "info", locals: {costume: @costume})}]
 
   end
