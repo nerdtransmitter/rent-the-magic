@@ -1,5 +1,6 @@
+<h1 class="my-5 p-2 text-center glow">Rent The Magic</h1>
 
-<%= form_with url: costumes_path, method: :get, class: "d-flex p-5 search-form" do %>
+<%= form_with url: costumes_path, method: :get, class: "d-flex p-3 search-form" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control border rounded-pill",
@@ -8,20 +9,32 @@
   <%= submit_tag "Search", class: "btn btn-primary border rounded-pill" %>
 <% end %>
 
-<h1 class="text-center fw-bolder m-3">Rent The Magic</h1>
+<div class="costumes-container rounded">
 
-<div class="cards">
-  <% @costumes.each do |costume| %>
-  <div class="card">
-    <h3><%= costume.name %></h3>
-    <div class="card-img-container d-flex justify-content-center align-items-center w-100">
-      <%= cl_image_tag costume.photos.first.key, height: 300, width: 200, crop: :fill %>
-    </div>
-    <p class="card-price"><%= number_to_currency(costume.price) %></p>
-    <p><%= costume.location %></p>
-    <%= link_to "Rent this costume!", costume_path(costume), class: "btn btn-ghost mb-3 fw-bolder"%>
+  <div class="cards-costumes cards text-center w-100">
+    <% @costumes.each do |costume| %>
+      <div class="card-costume shadow-lg" style="background-image: url(<%= cl_image_path costume.photos.first.key %>)">
+        <div class="overlay"></div>
+        <div class="card-buttons">
+            <% if policy(costume).edit? %>
+              <%= link_to "Edit", edit_costume_path(costume), class: "btn btn-white" %>
+            <% end %>
+            <!-- [...] -->
+            <%= button_to costume,
+              method: :delete,
+              data: { turbo_confirm: "Are you sure?" },
+              class: "btn btn-white" do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end if policy(costume).destroy? %>
+          </div>
+        <div class="costume-info">
+          <h4><%= costume.name %></h4>
+          <%# <h4 class="card-price fw-bolder"><small><%= number_to_currency(costume.price) %>
+          <%# </small></h4> %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
 
 <div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
