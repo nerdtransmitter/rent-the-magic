@@ -58,24 +58,52 @@
 
 }
 
-// .card .rent-link {
-//   background-color:#889edd;
-//   border: none;
-//   border-radius: 4px;
-//   color: #ffffff;
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin-top: auto;
-//   padding: 12px 16px;
-//   text-align: center;
-//   text-decoration: none;
-//   transition: background-color 0.2s ease-in-out;
-// }
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
-// .card .rent-link:hover {
-//   background-color: #5f7ac4;
-//   cursor: pointer;
-// }
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 5px;
+}
+
+.image-grid > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
