@@ -1,11 +1,13 @@
-<h1 class="text-center fw-bolder m-3">Rent The Magic</h1>
+<div class="container">
+  <h1 class="text-center fw-bolder m-3">Rent The Magic</h1>
+</div>
 
 <div class="cards">
   <% @costumes.each do |costume| %>
   <div class="card">
     <h3><%= costume.name %></h3>
     <div class="card-img-container d-flex justify-content-center align-items-center w-100">
-      <%= cl_image_tag costume.photo.key, height: 300, width: 200, crop: :fill %>
+      <%= cl_image_tag costume.photos.first.key, height: 300, width: 200, crop: :fill %>
     </div>
     <p class="card-price"><%= number_to_currency(costume.price) %></p>
     <p><%= costume.location %></p>
