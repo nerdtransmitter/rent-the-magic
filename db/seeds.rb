@@ -10,6 +10,9 @@ require "open-uri"
 
 Costume.destroy_all
 User.destroy_all
+u1 = User.create!(email: "alessia@test.com", password: "auroretest", password_confirmation: "auroretest")
+u2 = User.create!(email: "olga@test.com", password: "auroretest", password_confirmation: "auroretest")
+u3 = User.create!(email: "martial@test.com", password: "auroretest", password_confirmation: "auroretest")
 u = User.create!(email: "aurore@test.com", password: "auroretest", password_confirmation: "auroretest")
 
 user = User.all.sample

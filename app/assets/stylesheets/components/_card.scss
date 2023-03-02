@@ -13,6 +13,21 @@
   height: 100%;
 }
 
+.card-costume {
+  position: relative;
+  text-align: center !important;
+  border-radius: 10px;
+
+
+  .costume-info {
+    position: absolute;
+    bottom: -50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    border-radius: 15px;
+  }
+}
+
 .card h3 {
   font-size: 18px;
   font-weight: bold;
@@ -40,7 +55,7 @@
 
 .card-request {
   position: relative;
-  
+
 }
 
 // .card .rent-link {
