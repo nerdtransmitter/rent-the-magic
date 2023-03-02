@@ -15,7 +15,8 @@ class CostumesController < ApplicationController
 
   def show
     authorize @costume
-    @marker = [{lat: @costume.latitude, lng: @costume.longitude, marker_html: render_to_string(partial: "marker")}]
+    @marker = [{lat: @costume.latitude, lng: @costume.longitude, marker_html: render_to_string(partial: "marker"), info_html: render_to_string(partial: "info", locals: {costume: @costume})}]
+
   end
 
   def new
@@ -62,6 +63,6 @@ class CostumesController < ApplicationController
   end
 
   def costume_params
-    params.require(:costume).permit(:size, :category, :price, :name, photos:[], :description)
+    params.require(:costume).permit(:size, :category, :price, :name, :photos[], :description)
   end
 end

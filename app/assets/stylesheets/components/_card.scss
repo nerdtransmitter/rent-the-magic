@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Lora:ital@0;1&family=Martian+Mono&family=Montserrat:wght@300&family=Nunito:wght@300;400&family=Open+Sans:wght@300;400&family=Orbitron:wght@800;900&family=Playfair+Display+SC:wght@400;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;700;800&display=swap');
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -15,19 +32,30 @@
 
 .card-costume {
   position: relative;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center center;
   text-align: center !important;
   border-radius: 10px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
 
   .costume-info {
-    position: absolute;
-    bottom: -50px;
-    background-color: rgba(255, 255, 255, 0.9);
-    width: 100%;
-    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 20px;
   }
 }
 
+.card-buttons {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  display: flex;
+}
 .card h3 {
   font-size: 18px;
   font-weight: bold;
@@ -50,14 +78,38 @@
 .cards-costumes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
+  grid-gap: 40px;
 }
 
 .card-request {
   position: relative;
+  font-family: 'Poppins' !important;
 
 }
 
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.overlay:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+}
+
+.costume-info {
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
 
 
 

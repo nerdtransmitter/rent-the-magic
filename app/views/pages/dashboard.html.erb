@@ -3,33 +3,30 @@
 
 
     <div class="costumes-container col-7 rounded">
-      <h1 class="m-4 text-center glow">my costumes</h1>
+      <h1 class="my-5 text-center glow">my costumes</h1>
+
       <div class="cards-costumes text-center w-100">
         <% @costumes.each do |costume| %>
-
-          <div class="card-costume shadow-lg">
-            <%= cl_image_tag costume.photo.key, crop: :fill, class: "img-costume rounded" %>
-
-            <div class="costume-info">
-              <div class="d-flex justify-content-between align-items-center m-2">
-                <h4><%= costume.name %></h4>
-                <h4 class="card-price fw-bolder"><small><%= number_to_currency(costume.price) %></small></h4>
-              </div>
-              <div class="d-flex justify-content-end">
+          <div class="card-costume shadow-lg" style="background-image: url(<%=cl_image_path costume.photos.key%>)">
+            <div class="overlay"></div>
+            <div class="card-buttons">
                 <% if policy(costume).edit? %>
-                  <%= link_to "Edit", edit_costume_path(costume), class: "btn btn-ghost" %>
+                  <%= link_to "Edit", edit_costume_path(costume), class: "btn btn-white" %>
                 <% end %>
                 <!-- [...] -->
                 <%= button_to costume,
                   method: :delete,
                   data: { turbo_confirm: "Are you sure?" },
-                  class: "btn btn-ghost" do %>
+                  class: "btn btn-white" do %>
                   <i class="fas fa-trash-alt"></i>
                 <% end if policy(costume).destroy? %>
               </div>
+            <div class="costume-info">
+              <h4><%= costume.name %></h4>
+              <%# <h4 class="card-price fw-bolder"><small><%= number_to_currency(costume.price) %>
+              <%# </small></h4> %>
             </div>
           </div>
-
         <% end %>
       </div>
     </div>
@@ -41,11 +38,8 @@
             <div class="collapsible-container mb-3">
               <button type="button" class="collapsible"><%= booking.costume.name %></button>
                 <div class="content">
-                  <div class="">
-                    <div>
-                      <p><strong>From: </strong><%= booking.start_date %></p>
-                      <p><strong>To: </strong><%= booking.end_date %></p>
-                    </div>
+                  <div class="d-flex justify-content-between my-2">
+                    <p><strong></strong><%= booking.start_date %> <i class="fa-solid fa-arrow-right"></i> <%= booking.end_date %></p>
                     <div class="d-flex text-end">
                       <% if policy(booking).edit? %>
                         <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-ghost" %>
@@ -67,9 +61,12 @@
           <div class="booking-cards">
             <% @requests.each do |request| %>
               <% request.each do |r| %>
-                <div class="card-request bg-white p-2 mb-3 rounded collapsible">
+                <div class="card-request bg-white p-2 mb-3 rounded collapsible d-flex justify-content-between">
+                  <div>
+                    <h5><%= r.costume.name %></h5>
+                    <p style="font-family: 'Poppins'"><%= r.start_date %> <i class="fa-solid fa-arrow-right"></i> <%= r.end_date %></p>
+                  </div>
                   <div class="d-flex justify-content-between align-items-center">
-                    <p><strong></strong><%= r.start_date %> <i class="fa-solid fa-arrow-right"></i> <%= r.end_date %></p>
                     <%= button_to approve_booking_path(r),
                       class: "btn btn-ghost" do %>
                       <i class="fa-solid fa-thumbs-up"></i>
