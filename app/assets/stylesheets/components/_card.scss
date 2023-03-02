@@ -81,6 +81,11 @@
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   background-color: white;
+
+  .btn-ghost {
+    padding: 8px 2px !important;
+    margin: 0px 5px;
+  }
 }
 
 .cards-costumes {

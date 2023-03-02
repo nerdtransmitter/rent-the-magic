@@ -38,24 +38,22 @@
           <% @bookings.each do |booking| %>
             <div class="collapsible-container mb-3">
               <button type="button" class="collapsible"><%= booking.costume.name %></button>
-                <div class="content">
-                  <div class="d-flex justify-content-between my-2">
-                    <p><strong></strong><%= booking.start_date %> <i class="fa-solid fa-arrow-right"></i> <%= booking.end_date %></p>
-                    <div class="d-flex text-end">
-                      <% if policy(booking).edit? %>
-                        <%= link_to edit_booking_path(booking), class: "btn btn-ghost" do %>
-                          <i class="fa-solid fa-pen-to-square"></i>
-                        <% end %>
-                      <% end %>
-                      <%= button_to booking,
-                        method: :delete,
-                        data: { turbo_confirm: "Are you sure?" },
-                        class: "btn btn-ghost" do %>
-                        <i class="fas fa-trash-alt"></i>
-                      <% end if policy(booking).destroy? %>
-                    </div>
-                  </div>
+              <div class="content d-flex justify-content-between py-2 align-items-center">
+                <p class="mt-3"><strong></strong><%= booking.start_date %> <i class="fa-solid fa-arrow-right"></i> <%= booking.end_date %></p>
+                <div class="d-flex text-end ">
+                  <% if policy(booking).edit? %>
+                    <%= link_to edit_booking_path(booking), class: "btn btn-book" do %>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    <% end %>
+                  <% end %>
+                  <%= button_to booking,
+                    method: :delete,
+                    data: { turbo_confirm: "Are you sure?" },
+                    class: "btn btn-book" do %>
+                    <i class="fas fa-trash-alt"></i>
+                  <% end if policy(booking).destroy? %>
                 </div>
+              </div>
             </div>
           <% end %>
         <br>

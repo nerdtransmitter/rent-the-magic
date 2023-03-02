@@ -94,3 +94,22 @@
 .btn-create:hover {
   opacity: 1;
 }
+
+.btn-book {
+  color: $dark-violet;
+  //background-color: #E2CFF4;
+  border: 1px solid $dark-violet;
+  padding: 8px 12px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 0px 5px;
+
+}
+
+.btn-book:hover {
+  color: $pastel-violet;
+  border: 1px solid $pastel-violet;
+  transition: opacity 1s ease;
+}
