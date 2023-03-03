@@ -2,7 +2,7 @@
 
   <div class="w-100 ms-4">
     <div class="text-center ">
-      <h6 class="mr-4 pt-3">Looking for something ?</h6>
+      <h6 class="mr-4 pt-4">Looking for something ?</h6>
       <div class="d-flex justify-content-center">
         <%= form_with url: costumes_path, method: :get, class: "d-flex pt-2 search-form justify-content-between" do %>
           <%= text_field_tag :query,
@@ -13,10 +13,11 @@
           <%= submit_tag "Search", class: "btn btn-flat border rounded-pill" %>
         <% end %>
       </div>
+      <h3 class="text-start mx-5 mt-2"><%= pluralize @costumes.size, "result" %></h3>
     </div>
 
-      <div class="d-flex justify-content-between mr-4 py-2">
-        <div class="ml-5 cards text-center ">
+      <div class="d-flex justify-content-between mr-4 ">
+        <div class="ml-4 cards text-center ">
           <% @costumes.each do |costume| %>
             <div class="card-costume shadow-lg" style="background-image: url(<%= cl_image_path costume.photos.first.key %>)">
               <%= link_to costume_path(costume), class: "text-decoration-none" do %>
@@ -28,10 +29,10 @@
                   <%= link_to "Rent me", costume_path(costume), class: "btn btn-ghost mb-3 fw-bolder"%>
                   <p class="card-price text-start"><%= number_to_currency(costume.price) %>/day</p>
                   <p  class="text-ellipsis"><em><%= costume.description %></em></p>
-                </div>
               <% end %>
-        </div>
-      <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
 
 
