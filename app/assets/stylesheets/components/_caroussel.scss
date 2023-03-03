@@ -1,5 +1,19 @@
+.carousel-inner {
+  width: 600px;
+  border-radius: 10px;
+}
+
 .carousel-item img {
   height: 500px;
   width: 100%;
   object-fit: contain;
+}
+
+.carousel-control-next-icon {
+  background-image: url("https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-gauche-noir.png");
+  transform: rotate(180deg);
+}
+
+.carousel-control-prev-icon {
+  background-image: url("https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-gauche-noir.png");
 }
