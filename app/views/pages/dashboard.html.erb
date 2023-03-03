@@ -40,7 +40,7 @@
         <div>
           <h4 class="booking-title m-4 text-center">My requests</h3>
           <div class="booking-cards">
-            <% if @bookings.length == 0 %>
+            <% if @requests.length == 0 %>
               <p>You have zero requests ☹</p>
             <% else %>
               <% @requests.each do |request| %>
