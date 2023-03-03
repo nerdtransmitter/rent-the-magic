@@ -1,14 +1,19 @@
-<div class="bg-white">
-  <%= link_to "Back", costumes_path, class: "position-absolute btn-ghost text-decoration-none float-start " %>
-  <div class="row">
-    <div class="images">
-       <%= image_tag('crown.png', class: "img-crown") %> 
-       <%= image_tag('blabla.png', class: "img-blabla") %> 
-       <%= image_tag('linie.png', class: "img-linie") %> 
-    </div>
-    <div class="col-6">
+<div class="bg-white relative" style="min-height: inherit;">
+
+  <%= link_to "Back", costumes_path, class: "position-absolute btn-ghost text-decoration-none float-start m-3" %>
+
+  <div class="images">
+      <%= image_tag('crown.png', class: "img-crown") %>
+      <%= image_tag('blabla.png', class: "img-blabla") %>
+      <%= image_tag('linie.png', class: "img-linie") %>
+  </div>
+
+  <div class="d-flex p-5 wrapper-show justify-content-center" style="min-height: inherit;">
+
+    <div class="d-flex align-items-center justify-content-center">
+
       <div class="left-show">
-  
+
         <div class="card-img-container">
 
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -43,39 +48,42 @@
         </div>
 
       </div>
-    </div>
-    <div class="col-6">
+      <div class="right-show ms-3">
 
-      <div class="arrow"> 
-        <h5><span class="text-color"><%= current_user.first_name %></span> offers you</h5>
-        <%= image_tag('arrow.png', class: "img-arrow") %>
-      </div>
-
-      <div class="section-details d-flex justify-content-between align-items-top border-bottom py-3">
-        <div class="infos">
-          <h3 class="card-title"><%= @costume.name %></h3>
-          <p class="card-text fst-italic p-2">"<%= @costume.description %>"</p>
+        <div class="arrow">
+          <h5><span class="text-color"><%= current_user.first_name %></span> offers you</h5>
+          <%= image_tag('arrow.png', class: "img-arrow") %>
         </div>
-        <p class="card-price fw-bold"><%= number_to_currency(@costume.price) %></p>
-      </div>
 
-      <div class="d-flex justify-content-between">
-        <div class="py-3 section-map">
-          <h5 class="fw-bold">pick it up here :</h5>
-          <p class="fst-italic p-2"><%= @costume.location %></p>
+        <div class="section-details d-flex justify-content-between align-items-top border-bottom py-3">
+          <div class="infos">
+            <h3 class="card-title"><%= @costume.name %></h3>
+            <p class="card-text fst-italic p-2">"<%= @costume.description %>"</p>
+          </div>
+          <p class="card-price fw-bold"><%= number_to_currency(@costume.price) %></p>
+        </div>
 
-          <div style="height: 250px;" class="rounded;"
-            data-controller="map"
-            data-map-markers-value="<%= @marker.to_json %>"
-            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        <div class="d-flex justify-content-between">
+          <div class="py-3 section-map w-50">
+            <h5 class="fw-bold">pick it up here :</h5>
+            <p class="fst-italic p-2"><%= @costume.location %></p>
+
+            <div style="height: 250px;" class="rounded;"
+              data-controller="map"
+              data-map-markers-value="<%= @marker.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+          </div>
+
+          <div class="section-form py-3">
+            <%= render "bookings/form", booking: Booking.new, costume: @costume %>
           </div>
         </div>
 
-        <div class="section-form py-3">
-          <%= render "bookings/form", booking: Booking.new, costume: @costume %>
-        </div>
       </div>
 
     </div>
+
   </div>
+
 </div>

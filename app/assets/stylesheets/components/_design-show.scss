@@ -15,8 +15,8 @@
 }
 .img-crown{
   position: absolute;
-  top: -33px;
-  left: 687px;
+  top: 10px;
+  left: 852px;
   height: 151px;
   transform: rotate(65deg);
 }
@@ -30,16 +30,17 @@
 
 .img-linie{
   position: absolute;
-  top: 310px;
-  left: 269px;
+  top: 325px;
+  left: 380px;
   height: 302px;
   transform: rotate(133deg);
+  z-index: 1000;
 }
 
 .img-blabla{
   position: absolute;
   top: 225px;
-  left: -59px;
+  left: 39px;
   height: 66px;
   transform: rotate(65deg);
 }
