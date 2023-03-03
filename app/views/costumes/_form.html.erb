@@ -9,7 +9,7 @@
         <%= f.input :price %>
         <%= f.input :location, input_html: {data: {location_autocomplete_target: "location"}, class: "d-none"}, wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
         <%= f.input :photos, as: :file, input_html: { multiple: true} %>
-        <%= f.submit 'Add a costume', class: "btn-ghost border border-light mt-3"%>
+        <%= f.submit 'Add costume', class: "btn-ghost border border-light mt-3"%>
       <% end %>
       </div>
       <div class="col-4 mt-2 mb-2">
