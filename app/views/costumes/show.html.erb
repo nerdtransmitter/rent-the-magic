@@ -2,13 +2,13 @@
   <%= link_to "Back", costumes_path, class: "position-absolute btn-ghost text-decoration-none float-start " %>
   <div class="row">
     <div class="images">
-       <%= image_tag('crown.png', class: "img-crown") %> 
-       <%= image_tag('blabla.png', class: "img-blabla") %> 
-       <%= image_tag('linie.png', class: "img-linie") %> 
+       <%= image_tag('crown.png', class: "img-crown") %>
+       <%= image_tag('blabla.png', class: "img-blabla") %>
+       <%= image_tag('linie.png', class: "img-linie") %>
     </div>
     <div class="col-6">
       <div class="left-show">
-  
+
         <div class="card-img-container">
 
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -46,8 +46,8 @@
     </div>
     <div class="col-6">
 
-      <div class="arrow"> 
-        <h5><span class="text-color"><%= current_user.first_name %></span> offers you</h5>
+      <div class="arrow">
+        <h5><span class="text-color"><%= @costume.user.first_name %></span> offers you</h5>
         <%= image_tag('arrow.png', class: "img-arrow") %>
       </div>
 
