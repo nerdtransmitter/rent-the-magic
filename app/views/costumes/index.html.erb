@@ -1,41 +1,47 @@
+<div class="d-flex w-100 justify-content-between">
 
-<div class="text-center ">
-  <h6 class="mr-4 pt-3">Looking for something ?</h6>
-  <div class="d-flex justify-content-center">
-    <%= form_with url: costumes_path, method: :get, class: "d-flex pt-2 search-form justify-content-between" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control border text-center rounded-pill",
-        placeholder: "Find a costume"
-      %>
-      <%= submit_tag "Search", class: "btn btn-flat border rounded-pill" %>
-    <% end %>
-  </div>
-</div>
-
-  <div class="d-flex justify-content-between mr-4 py-2">
-    <div class="ml-5 cards text-center ">
-      <% @costumes.each do |costume| %>
-        <div class="card-costume shadow-lg" style="background-image: url(<%= cl_image_path costume.photos.first.key %>)">
-          <%= link_to costume_path(costume), class: "text-decoration-none" do %>
-            <div class="overlay"></div>
-            <div class="costume-info">
-              <h4><%= costume.name %></h4>
-            </div>
-            <div class="costume-info-card bg-white p-3 justify-content-between">
-              <p class="card-price"><%= number_to_currency(costume.price) %></p>
-              <%= link_to "Rent", costume_path(costume), class: "btn btn-ghost mb-3 fw-bolder"%>
-            </div>
-          <% end %>
+  <div class="w-100 ms-4">
+    <div class="text-center ">
+      <h6 class="mr-4 pt-3">Looking for something ?</h6>
+      <div class="d-flex justify-content-center">
+        <%= form_with url: costumes_path, method: :get, class: "d-flex pt-2 search-form justify-content-between" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control text-center rounded-pill",
+            placeholder: "Find a costume"
+          %>
+          <%= submit_tag "Search", class: "btn btn-flat border rounded-pill" %>
+        <% end %>
+      </div>
     </div>
-   <% end %>
-  </div>
 
+      <div class="d-flex justify-content-between mr-4 py-2">
+        <div class="ml-5 cards text-center ">
+          <% @costumes.each do |costume| %>
+            <div class="card-costume shadow-lg" style="background-image: url(<%= cl_image_path costume.photos.first.key %>)">
+              <%= link_to costume_path(costume), class: "text-decoration-none" do %>
+                <div class="overlay"></div>
+                <div class="costume-info">
+                  <h4><%= costume.name %></h4>
+                </div>
+                <div class="costume-info-card bg-white p-2 ">
+                  <%= link_to "Rent me", costume_path(costume), class: "btn btn-ghost mb-3 fw-bolder"%>
+                  <p class="card-price text-start"><%= number_to_currency(costume.price) %>/day</p>
+                  <p  class="text-ellipsis"><em><%= costume.description %></em></p>
+                </div>
+              <% end %>
+        </div>
+      <% end %>
+      </div>
+
+
+    </div>
+  </div>
   <div class="container-map-search">
-    <div style="width: 400px; height: 600px; margin-top: 40px; margin-bottom: 40px"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+      <div id="map" style="width: 500px; margin-bottom: 40px"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
   </div>
 </div>
