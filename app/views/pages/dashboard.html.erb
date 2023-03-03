@@ -46,7 +46,6 @@
               <% @requests.each do |request| %>
                   <% request.each do |r| %>
                     <div class="card-request bg-white p-2 mb-3 rounded collapsible d-flex justify-content-between">
-                      <%= cl_image_tag r.costume.photo.key %>
                       <div>
                         <h5><%= r.costume.name %></h5>
                         <p style="font-family: 'Poppins'"><%= r.start_date %> <i class="fa-solid fa-arrow-right"></i> <%= r.end_date %></p>
