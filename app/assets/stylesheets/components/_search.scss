@@ -1,6 +1,6 @@
 .search-form {
    /* set the maximum width */
-   min-width: 500px;
+  min-width: 500px;
   max-width: 600px;
   // margin: 0 auto; /*
   text-align: center !important;
@@ -8,7 +8,7 @@
 }
 
 .container-map-search {
-  padding: 0 30px;
+  padding: 0;
   color: white;
   font-family: 'Poppins';
   border-radius: 7px;
@@ -17,15 +17,25 @@
 
 .map {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+    height: 100vh;
+    position: sticky;
+    top: 0;
+
 }
 
 .search-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 h6 {
   font-family: 'Poppins';
   font-size: 16px;
+}
+
+.rounded-pill {
+  border: 3px solid $pastel-violet;
 }
