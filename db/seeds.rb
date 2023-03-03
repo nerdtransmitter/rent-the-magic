@@ -53,7 +53,7 @@ file4 = URI.open("https://m.media-amazon.com/images/I/51hGlkr7ieL._AC_UL1001_.jp
 file5 = URI.open("https://m.media-amazon.com/images/I/51erm1DdR4L._AC_UL1001_.jpg")
 costume3 = Costume.new(
   name: "Belle",
-  category: "Character",
+  category: "Princess",
   size: "S",
   price: 10.99,
   location: "5 rue calmels prolongée, 75018 PARIS",
@@ -70,7 +70,7 @@ file5 = URI.open("https://m.media-amazon.com/images/I/51OBdwNLN-L._AC_UL1001_.jp
 file6 = URI.open("https://m.media-amazon.com/images/I/51l1uSpbrTL._AC_UL1001_.jpg")
 costume4 = Costume.new(
   name: "Cinderella",
-  category: "Character",
+  category: "Princess",
   size: "S",
   price: 10.99,
   location: "9 rue calmels prolongée, 75018 PARIS",

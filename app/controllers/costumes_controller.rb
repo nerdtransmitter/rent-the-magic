@@ -24,7 +24,6 @@ class CostumesController < ApplicationController
 
   end
 
-
   def show
     authorize @costume
     @booking = Booking.new
@@ -76,6 +75,6 @@ class CostumesController < ApplicationController
   end
 
   def costume_params
-    params.require(:costume).permit(:size, :category, :price, :name, :description, photos: [])
+    params.require(:costume).permit(:size, :category, :price, :name, :description, :location, photos: [])
   end
 end
