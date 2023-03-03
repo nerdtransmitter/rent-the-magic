@@ -30,6 +30,25 @@
   transition: opacity 1s ease;
 }
 
+.btn-ghost2 {
+  color: $dark-violet;
+  background-color: white;
+  border: 1px solid $dark-violet;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 0px 10px 0 10px;
+
+}
+
+.btn-ghost2:hover {
+  color: white;
+  border: 1px solid $dark-violet;
+  transition: opacity 1s ease;
+}
+
 .btn-white {
   color: #416259;
   background-color: #E2CFF4;
