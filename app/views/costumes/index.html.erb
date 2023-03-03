@@ -17,7 +17,7 @@
     </div>
 
       <div class="d-flex justify-content-between mr-4 ">
-        <div class="ml-4 cards text-center ">
+        <div class="ml-4 cards-costumes text-center ">
           <% @costumes.each do |costume| %>
             <div class="card-costume shadow-lg" style="background-image: url(<%= cl_image_path costume.photos.first.key %>)">
               <%= link_to costume_path(costume), class: "text-decoration-none" do %>
@@ -29,17 +29,15 @@
                   <%= link_to "Rent me", costume_path(costume), class: "btn btn-ghost mb-3 fw-bolder"%>
                   <p class="card-price text-start"><%= number_to_currency(costume.price) %>/day</p>
                   <p  class="text-ellipsis"><em><%= costume.description %></em></p>
+                </div>
               <% end %>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-
-
-    </div>
   </div>
   <div class="container-map-search">
-      <div id="map" style="width: 500px; margin-bottom: 40px"
+      <div id="map" style="width: 300px; margin-bottom: 40px"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
