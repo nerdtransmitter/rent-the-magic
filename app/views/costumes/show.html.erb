@@ -1,10 +1,10 @@
 <div class="bg-white">
   <%= link_to "Back", costumes_path, class: "position-absolute btn-ghost text-decoration-none float-start " %>
   <div class="row">
-  <div class="images">
-    <%# <%= image_tag('crown.png', class: "img-crown") %>
-    <%# <%= image_tag('etoile.png', class: "img-etoile") %> 
-    <%# <%= image_tag('linie.png', class: "img-linie") %> 
+    <div class="images">
+       <%= image_tag('crown.png', class: "img-crown") %> 
+       <%= image_tag('blabla.png', class: "img-blabla") %> 
+       <%= image_tag('linie.png', class: "img-linie") %> 
     </div>
     <div class="col-6">
       <div class="left-show">
@@ -47,10 +47,8 @@
     <div class="col-6">
 
       <div class="arrow"> 
-      
         <h5><span class="text-color"><%= current_user.first_name %></span> offers you</h5>
-        <%# <%= image_tag('arrow.png', class: "img-arrow") %>
-
+        <%= image_tag('arrow.png', class: "img-arrow") %>
       </div>
 
       <div class="section-details d-flex justify-content-between align-items-top border-bottom py-3">
