@@ -3,7 +3,7 @@
 <div class="p-4">
   <div class="d-flex align-items-center">
     <%= image_tag "avatar_user.png", class: "avatar-large" %>
-    <h4 class="booking-title2 mx-4 " >Hello  <span class="text-color"><%= current_user.first_name %></span> !</h4>
+    <h4 class="booking-title2 mx-4 " >Hello  <span class="text-color fw-bolder"><%= current_user.first_name %></span> !</h4>
   </div>
 </div>
 
@@ -73,28 +73,27 @@
         </div>
       <% else %>
         <div class="cards-costumes text-center w-100">
-        <% @costumes.each do |costume| %>
-          <div class="card-costume shadow-lg" style="background-image: url(<%=cl_image_path costume.photos.first.key%>)">
-            <div class="overlay"></div>
-            <div class="card-buttons">
-                <% if policy(costume).edit? %>
-                  <%= link_to "Edit", edit_costume_path(costume), class: "btn btn-ghost2" %>
-                <% end %>
-                <!-- [...] -->
-                <%= button_to costume,
-                  method: :delete,
-                  data: { turbo_confirm: "Are you sure?" },
-                  class: "btn btn-ghost2" do %>
-                  <i class="fas fa-trash-alt"></i>
-                <% end if policy(costume).destroy? %>
-              </div>
-            <div class="costume-info">
-              <h4><%= costume.name %></h4>
-              <%# <h4 class="card-price fw-bolder"><small><%= number_to_currency(costume.price) %>
-              <%# </small></h4> %>
+          <% @costumes.each do |costume| %>
+            <div class="card-costume shadow-lg" style="background-image: url(<%=cl_image_path costume.photos.first.key%>)">
+              <%= link_to costume_path(costume), class: "text-decoration-none" do %>
+                <div class="overlay"></div>
+              <% end %>
+                <div class="card-buttons">
+                    <% if policy(costume).edit? %>
+                      <%= link_to "Edit", edit_costume_path(costume), class: "btn btn-ghost2" %>
+                    <% end %>
+                    <%= button_to costume,
+                      method: :delete,
+                      data: { turbo_confirm: "Are you sure?" },
+                      class: "btn btn-ghost2" do %>
+                      <i class="fas fa-trash-alt"></i>
+                    <% end if policy(costume).destroy? %>
+                </div>
+                <div class="costume-info">
+                    <h4><%= costume.name %></h4>
+                </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
         </div>
       <% end %>
     </div>
