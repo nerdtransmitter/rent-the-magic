@@ -20,7 +20,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def approve?
-    record.user == user
+    record.costume.user == user
   end
 
   class Scope < Scope

@@ -226,6 +226,9 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+  .cards-costumes {
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
 }
 
 @media (min-width: 1900px) {
