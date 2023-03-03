@@ -1,6 +1,11 @@
 <div class="bg-white">
   <%= link_to "Back", costumes_path, class: "position-absolute btn-ghost text-decoration-none float-start " %>
   <div class="row">
+  <div class="images">
+    <%# <%= image_tag('crown.png', class: "img-crown") %>
+    <%# <%= image_tag('etoile.png', class: "img-etoile") %> 
+    <%# <%= image_tag('linie.png', class: "img-linie") %> 
+    </div>
     <div class="col-6">
       <div class="left-show">
   
@@ -27,7 +32,7 @@
 
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+              <span class="visually-hidden ">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -42,23 +47,24 @@
     <div class="col-6">
 
       <div class="arrow"> 
-        <h5><%= @costume.user.first_name %> offers you</h5>
-        <%= image_tag('arrow.png', class: "img-arrow") %>
+      
+        <h5><span class="text-color"><%= current_user.first_name %></span> offers you</h5>
+        <%# <%= image_tag('arrow.png', class: "img-arrow") %>
 
       </div>
 
       <div class="section-details d-flex justify-content-between align-items-top border-bottom py-3">
         <div class="infos">
           <h3 class="card-title"><%= @costume.name %></h3>
-          <p class="card-text"><%= @costume.description %></p>
+          <p class="card-text fst-italic p-2">"<%= @costume.description %>"</p>
         </div>
-        <p class="card-price"><%= number_to_currency(@costume.price) %></p>
+        <p class="card-price fw-bold"><%= number_to_currency(@costume.price) %></p>
       </div>
 
       <div class="d-flex justify-content-between">
         <div class="py-3 section-map">
-          <h5>pick it up here :</h5>
-          <p><%= @costume.location %></p>
+          <h5 class="fw-bold">pick it up here :</h5>
+          <p class="fst-italic p-2"><%= @costume.location %></p>
 
           <div style="height: 250px;" class="rounded;"
             data-controller="map"

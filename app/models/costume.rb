@@ -16,5 +16,5 @@ class Costume < ApplicationRecord
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
 
-  validates :name, :size, :category, presence: true
+  validates :name, :size, :category,  presence: true
 end
