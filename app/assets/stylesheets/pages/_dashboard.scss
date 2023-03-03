@@ -3,23 +3,40 @@
 
 .bookings-container {
   float: right;
-  background-color: rgba(47, 29, 255, 0.8);
+  background-color: white;
   margin-right: auto;
   padding: 15px;
   margin: 10px 0;
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 .costumes-container {
   background-color: transparent;
-  margin-left: 145px;
-
+  //margin-left: 100px;
 }
 
-h1, h2, h3 {
-  font-family: 'Poppins';
-  letter-spacing: 2px;
-  font-weight: bolder;
+.title-costume {
+  margin-left: 0px;
+  margin-bottom: 20px;
+  font-family: $title-font;
+  font-size: 30px;
+  color: $dark-violet;
+}
+
+.booking-title {
+  font-family: $title-font;
+  font-size: 30px;
+  color: $dark-violet;
+}
+
+
+
+h1, h2, h3, h4 {
+  font-family: $p-font;
+  //letter-spacing: 2px;
+  //font-weight: bolder;
+  margin-bottom: 0px;
+  font-size: 20px;
 }
 
 
