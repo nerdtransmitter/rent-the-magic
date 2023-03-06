@@ -17,7 +17,7 @@
     </div>
 
       <div class="d-flex justify-content-between mr-4 ">
-        <div class="ml-4 cards text-center ">
+        <div class="ml-6 cards text-center ">
           <% @costumes.each do |costume| %>
             <div class="card-costume shadow-lg" style="background-image: url(<%= cl_image_path costume.photos.first.key %>)">
               <%= link_to costume_path(costume), class: "text-decoration-none" do %>
